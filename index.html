@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>潔屋洗衣漢口店｜台中高品質洗衣專家</title>
+  <meta
+    name="description"
+    content="潔屋洗衣漢口店提供精品帽保養、羽絨外套、高級服飾、雪衣雪褲、寢具清洗與台中到府收送服務。專業洗護，值得信賴。"
+  />
+
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="潔屋洗衣漢口店｜台中高品質洗衣專家" />
+  <meta
+    property="og:description"
+    content="精品帽保養、羽絨外套、高級服飾、雪衣雪褲、寢具清洗與台中到府收送。"
+  />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root {
+      --blue: #16639a;
+      --blue-dark: #0f4f7c;
+      --blue-light: #eaf4fb;
+      --text: #24313d;
+      --muted: #6c7a86;
+      --line: #dce6ed;
+      --white: #ffffff;
+      --bg: #f7fafc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        "Noto Sans TC",
+        "PingFang TC",
+        "Microsoft JhengHei",
+        sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      color: var(--blue-dark);
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--blue);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 21px;
+      font-weight: 900;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-weight: 500;
+      margin-top: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .hero {
+      padding: 88px 0 72px;
+      background:
+        radial-gradient(circle at 85% 20%, #dff2ff 0, transparent 34%),
+        linear-gradient(180deg, #ffffff 0%, #f3f9fd 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 56px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--blue-light);
+      color: var(--blue-dark);
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1.12;
+      margin: 0 0 22px;
+      letter-spacing: -0.04em;
+      color: #153b58;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 680px;
+      margin: 0 0 30px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 12px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--blue-dark);
+    }
+
+    .btn-secondary {
+      background: white;
+      border-color: var(--line);
+      color: var(--blue-dark);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--blue);
+    }
+
+    .hero-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 32px;
+      box-shadow: 0 20px 50px rgba(31, 86, 121, 0.1);
+    }
+
+    .hero-card h2 {
+      margin: 0 0 8px;
+      color: var(--blue-dark);
+    }
+
+    .hero-card p {
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .feature-list {
+      margin-top: 24px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .feature-item {
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: var(--blue-light);
+      font-weight: 700;
+      color: #31556f;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 42px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(30px, 4vw, 44px);
+      margin: 0 0 12px;
+      color: #173f5c;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 26px;
+      transition: 0.2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(31, 86, 121, 0.09);
+    }
+
+    .service-icon {
+      font-size: 34px;
+      margin-bottom: 16px;
+    }
+
+    .service-card h3 {
+      margin: 0 0 8px;
+      color: var(--blue-dark);
+      font-size: 21px;
+    }
+
+    .service-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .highlight {
+      background: var(--blue);
+      color: white;
+      border-radius: 30px;
+      padding: 46px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .highlight h2 {
+      margin: 0 0 8px;
+      font-size: 32px;
+    }
+
+    .highlight p {
+      margin: 0;
+      opacity: 0.9;
+    }
+
+    footer {
+      background: #102d42;
+      color: white;
+      padding: 42px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: flex-start;
+    }
+
+    .footer-muted {
+      color: #c6d6e1;
+      font-size: 14px;
+    }
+
+    @media (max-width: 820px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 62px;
+      }
+
+      .hero-grid,
+      .highlight {
+        grid-template-columns: 1fr;
+      }
+
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        padding: 24px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top">
+        <div class="brand-mark">潔</div>
+        <div>
+          潔屋洗衣漢口店
+          <small>精緻洗護 × 在地收送</small>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#services">服務項目</a>
+        <a href="#hat-care">精品帽保養</a>
+        <a href="#contact">聯絡我們</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">台中高品質洗衣專家</span>
+          <h1>把乾淨，<br />變成日常。</h1>
+          <p>
+            從精品帽、羽絨外套、高級服飾，到雪衣雪褲與寢具，
+            依材質與衣況提供細緻洗護，讓每一件重要物品都被好好對待。
+          </p>
+
+          <div class="actions">
+            <a class="btn btn-primary" href="#services">查看服務</a>
+            <a class="btn btn-secondary" href="#contact">LINE 諮詢</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h2>專業洗護，值得信賴。</h2>
+          <p>不只洗乾淨，更重視材質、結構與交件前的細節檢查。</p>
+
+          <div class="feature-list">
+            <div class="feature-item">精緻洗護與材質評估</div>
+            <div class="feature-item">高級服飾與機能衣專業處理</div>
+            <div class="feature-item">台中在地收送服務</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>特色服務</h2>
+          <p>依不同材質與使用情境，提供更精細的洗護服務。</p>
+        </div>
+
+        <div class="services">
+          <article class="service-card" id="hat-care">
+            <div class="service-icon">👒</div>
+            <h3>精品帽保養</h3>
+            <p>深層清潔、汗漬與異味處理、帽型整理與整燙塑型。</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🪶</div>
+            <h3>羽絨外套</h3>
+            <p>依羽絨材質與衣況進行專業洗護，兼顧潔淨與蓬鬆度。</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">💎</div>
+            <h3>高級服飾</h3>
+            <p>精品、大衣、羊毛、真絲與特殊材質衣物細緻洗護。</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🎿</div>
+            <h3>雪衣雪褲</h3>
+            <p>機能衣、GORE-TEX 與滑雪裝備依材質提供專業保養。</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🛏️</div>
+            <h3>寢具清洗</h3>
+            <p>棉被、羽絨被、毛毯、床組等居家寢具清潔保養。</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🚚</div>
+            <h3>到府收送</h3>
+            <p>台中地區提供在地收送服務，LINE 預約更加方便。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="highlight">
+          <div>
+            <h2>精品帽保養｜本月主打</h2>
+            <p>深層清潔 × 帽型塑型 × 細節檢查，讓常戴的帽子重新整理好。</p>
+          </div>
+          <a class="btn btn-secondary" href="#contact">立即詢問</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <h2>歡迎 LINE 詢問</h2>
+          <p>
+            如需估價，可拍攝物件正面、側面與污漬近照，我們會協助評估洗護方式。
+          </p>
+        </div>
+
+        <div class="actions" style="justify-content:center;">
+          <a class="btn btn-primary" href="#">
+            開啟 LINE 諮詢
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <strong>潔屋洗衣漢口店</strong>
+        <div class="footer-muted">台中高品質洗衣專家｜精緻洗護 × 在地收送</div>
+      </div>
+
+      <div class="footer-muted">
+        把乾淨，變成日常。
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
