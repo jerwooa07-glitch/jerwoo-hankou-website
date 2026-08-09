@@ -58,6 +58,52 @@ section{padding:70px 0}
 .card{padding:24px}
 .card h3{color:var(--blue)}
 .icon{font-size:34px}
+.home-quality{
+  background:linear-gradient(180deg,#111820,#1a2630);
+  color:#fff;
+}
+.home-quality-grid{
+  display:grid;
+  grid-template-columns:minmax(0,.82fr) minmax(420px,1.18fr);
+  gap:34px;
+  align-items:center;
+}
+.home-quality .pill{
+  background:rgba(12,138,143,.18);
+  color:#7ed1d3;
+}
+.home-quality-copy h2{
+  color:#fff;
+}
+.home-quality-copy p{
+  color:#d9e2e8;
+  margin:0;
+}
+.quality-points{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-top:22px;
+}
+.quality-points span{
+  border-left:4px solid var(--gold);
+  background:rgba(255,255,255,.08);
+  border-radius:8px;
+  padding:12px 14px;
+  font-weight:800;
+  color:#fff;
+}
+.home-quality-visual{
+  margin:0;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:8px;
+  overflow:hidden;
+  box-shadow:0 22px 60px rgba(0,0,0,.24);
+}
+.home-quality-visual img{
+  width:100%;
+  height:auto;
+}
 .band{background:var(--blue);color:#fff;padding:36px;border-radius:8px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
 .page-hero{padding:56px 0;background:linear-gradient(180deg,#fff,#eaf5f7)}
 .content{display:grid;grid-template-columns:1fr 320px;gap:28px}
@@ -880,7 +926,8 @@ section{padding:70px 0}
   .menu{display:none}
   .brand-logo{width:74px;height:52px}
   .brand-copy{font-size:15px}
-  .hero-grid,.content,.band,.hat-hero-grid,.video-grid,.split-section,.cta-band,.case-ready,.price-layout,.gore-hero-grid,.gore-guide-grid,.risk-hero-grid,.risk-two-col{grid-template-columns:1fr}
+  .hero-grid,.content,.band,.home-quality-grid,.hat-hero-grid,.video-grid,.split-section,.cta-band,.case-ready,.price-layout,.gore-hero-grid,.gore-guide-grid,.risk-hero-grid,.risk-two-col{grid-template-columns:1fr}
+  .home-quality-visual{order:-1}
   .gore-feature-grid{grid-template-columns:repeat(2,1fr)}
   .gore-hero{padding:48px 0}
   .gore-hero-image,.risk-hero-image{order:-1}
@@ -933,6 +980,7 @@ section{padding:70px 0}
   .plan-card,.article,.cta-band{padding:22px}
   .price{font-size:42px}
   .gore-feature-grid{grid-template-columns:1fr}
+  .quality-points{grid-template-columns:1fr}
   .gore-hero-copy h1{font-size:40px}
   .risk-hero-copy h1{font-size:38px}
 }
