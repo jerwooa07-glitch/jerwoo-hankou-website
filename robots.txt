@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jerwooa07-glitch.github.io/jerwoo-hankou-website/sitemap.xml

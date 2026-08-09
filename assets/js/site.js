@@ -1,0 +1,1 @@
+window.JERWOO={lineUrl:"https://line.me/R/ti/p/@yrh5443u"};document.addEventListener("DOMContentLoaded",()=>document.querySelectorAll("[data-line]").forEach(a=>a.href=window.JERWOO.lineUrl));
