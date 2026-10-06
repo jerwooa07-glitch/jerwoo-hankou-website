@@ -44,3 +44,16 @@ fieldset{border:0;margin:16px 0 0;padding:0;min-width:0}.layer-fields{display:gr
 @media(max-width:600px){.header-inner,.estimator-main{width:calc(100% - 28px)}.header-inner{gap:9px;padding:10px 0}.brand strong{font-size:16px}.brand img{width:46px;height:40px}.return-links{width:100%;padding-left:56px;gap:18px;font-size:13px}.estimator-main{padding-top:22px}h1{font-size:25px}h2{font-size:21px}.intro-copy{font-size:14px}.step-labels{display:none}.progress-track{margin-bottom:16px}.wizard-panel{padding:18px;border-radius:14px}.dimensions,.layer-fields,.two-fields{grid-template-columns:1fr;gap:16px}.layer-card{padding:15px}.measure-card{padding:15px}.group-result{grid-template-columns:1fr}.group-result .price{font-size:18px}.total-box{padding:15px}.total-box strong{font-size:23px}.total-line{font-size:14px}.summary-actions{gap:12px}.return-actions{display:grid;gap:8px}.wizard-actions{gap:10px}.button{padding:11px 13px}.info-note{font-size:14px}.check-row{font-size:15px}}
 @media(max-width:600px){.share-box textarea{font-size:16px}}
 @media(prefers-reduced-motion:reduce){.progress-track span{transition:none}}
+
+/* V4.10: visible picture choices and separate actual panel measurements. */
+.field-label{font-weight:700;margin:0 0 7px;color:var(--navy)}
+.style-hint{margin:0 0 12px}
+.style-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.style-card{display:flex;flex-wrap:wrap;align-items:flex-start;gap:9px;padding:10px;border:1px solid var(--line);border-radius:10px;margin:0;cursor:pointer;min-width:0}
+.style-card img{order:-1;display:block;width:100%;height:108px;object-fit:cover;border-radius:6px}
+.style-card>span{flex:1;min-width:0}.style-card strong,.style-card small{display:block}.style-card strong{color:var(--navy);font-size:16px}.style-card small{font-size:13px;color:var(--muted);font-weight:400;margin-top:3px}
+.style-card.selected,.material-card.selected{border-color:var(--blue);background:var(--soft)}
+.material-field{margin-top:20px}.material-options{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.material-card{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:9px;padding:12px;margin:0;cursor:pointer;font-size:15px}
+.quantity-field{max-width:340px;margin-top:20px}.quantity-field label{font-size:15px}.actual-dimensions{margin-top:22px}.actual-dimensions label{font-size:15px}
+@media(max-width:600px){.style-options{grid-template-columns:1fr;gap:10px}.style-card{flex-wrap:nowrap;align-items:center;padding:11px;gap:10px}.style-card img{order:0;width:84px;height:68px;flex:0 0 84px}.style-card input{margin:0}.style-card strong{font-size:16px}.style-card small{font-size:13px}.material-options{grid-template-columns:1fr;gap:10px}.quantity-field{max-width:none}}

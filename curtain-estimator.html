@@ -6,9 +6,9 @@
   <title>窗簾清洗費用試算器｜潔屋洗衣漢口店</title>
   <meta name="description" content="窗戶尺寸量一次，布簾與紗簾分別選款式、片數，試算單片洗費與到府拆裝協助費。線上金額僅供參考，正式報價以門市確認為準。">
   <link rel="canonical" href="https://jerwooa07-glitch.github.io/jerwoo-hankou-website/curtain-estimator.html">
-  <link rel="stylesheet" href="assets/css/curtain-estimator.css">
+  <link rel="stylesheet" href="assets/css/curtain-estimator.css?v=4.10">
   <script src="assets/js/curtain-pricing.js" defer></script>
-  <script src="assets/js/curtain-estimator.js" defer></script>
+  <script src="assets/js/curtain-estimator.js?v=4.10" defer></script>
 </head>
 <body>
   <header class="estimator-header">
@@ -56,58 +56,69 @@
       <section id="step2" class="step" hidden aria-labelledby="heading2">
         <h2 id="heading2" tabindex="-1">選擇方便的量測方式</h2>
         <div class="measure-options">
-          <label class="measure-card"><input type="radio" name="measure" value="actual" checked><span><strong>實際窗簾布大小 <small class="recommend">較準確</small></strong><span>已拆下：量單片布攤平後的寬、高，再填同尺寸片數。</span></span></label>
+          <label class="measure-card"><input type="radio" name="measure" value="actual" checked><span><strong>實際窗簾布大小 <small class="recommend">較準確</small></strong><span>已拆下：布簾、紗簾分別量單片攤平後的寬、高，再填同尺寸片數。</span></span></label>
           <label class="measure-card"><input type="radio" name="measure" value="window"><span><strong>窗戶大小推估</strong><span>尚未拆下：整窗量一次，布簾與紗簾分別設定。</span></span></label>
         </div>
         <p class="small-note">窗戶大小是初步推估，可能與實際窗簾布尺寸有落差。</p>
       </section>
 
       <section id="step3" class="step" hidden aria-labelledby="heading3">
-        <h2 id="heading3" tabindex="-1">輸入尺寸</h2>
-        <p id="measureNotice" class="info-note">請量單片窗簾布攤平後的寬、高。</p>
+        <h2 id="heading3" tabindex="-1">輸入窗戶尺寸</h2>
+        <p id="measureNotice" class="info-note">整個窗戶的寬、高量一次。下一步分別選布簾與紗簾的款式、片數。</p>
         <div class="dimensions">
-          <div><label id="widthLabel" for="width">單片布寬（cm）</label><input id="width" type="number" min="0.1" step="any" inputmode="decimal" placeholder="例：300" aria-describedby="widthHint"><small id="widthHint">布攤平後，量左右寬度</small></div>
-          <div><label id="heightLabel" for="height">單片布高（cm）</label><input id="height" type="number" min="0.1" step="any" inputmode="decimal" placeholder="例：240" aria-describedby="heightHint"><small id="heightHint">量布本身的上下高度</small></div>
+          <div><label for="width">整個窗戶寬（cm）</label><input id="width" type="text" inputmode="decimal" autocomplete="off" placeholder="例：300" aria-describedby="widthHint"><small id="widthHint">量整個窗戶的左右寬度。</small></div>
+          <div><label for="height">完整窗戶高（cm）</label><input id="height" type="text" inputmode="decimal" autocomplete="off" placeholder="例：240" aria-describedby="heightHint"><small id="heightHint">量整個窗戶的上下高度。</small></div>
         </div>
       </section>
 
       <section id="step4" class="step" hidden aria-labelledby="heading4">
         <h2 id="heading4" tabindex="-1">選擇要清洗的窗簾</h2>
-        <p id="dimensionSummary" class="small-note"></p>
-        <div id="windowGroups" hidden>
+        <p id="dimensionSummary" class="small-note" hidden></p>
+        <div id="windowGroups">
           <p class="info-note">布簾與紗簾請分開選擇；只計算您勾選的項目。</p>
-          <p class="small-note">片數填此層左右合計。系統以同一層每片同寬推估；高度維持完整高度。</p>
+          <p id="actualMeasureNotice" class="small-note">請分別攤平量測布簾、紗簾的單片尺寸。</p>
+          <p id="layerQuantityNotice" class="small-note">同一類窗簾須為相同尺寸、款式與材質；不同項目請再估一組。</p>
           <div class="layer-card" id="clothCard">
             <label class="check-row layer-title" for="washCloth"><input id="washCloth" type="checkbox"><span>要洗布簾</span></label>
-            <fieldset id="clothSettings" hidden disabled>
-              <div class="layer-fields">
-                <div><label for="clothStyle">布簾款式</label><select id="clothStyle" class="style-select" data-preview="clothPreview"><option value="">請選擇款式</option><option value="pleated">折簾</option><option value="snake">蛇行簾</option><option value="roman">羅馬簾</option></select></div>
-                <div><label for="clothMaterial">布簾材質</label><select id="clothMaterial"><option value="normal">一般單層</option><option value="heavy">厚布／雙層／絨布</option></select></div>
-                <div><label for="clothQty">布簾片數（左右合計）</label><select id="clothQty" class="piece-select"><option value="">請選擇片數</option></select></div>
+            <fieldset id="clothSettings" hidden disabled aria-label="布簾設定">
+              <p class="field-label">布簾款式</p>
+              <p class="small-note style-hint">請點選與您家布簾相近的款式。</p>
+              <div class="style-options" role="radiogroup" aria-label="布簾款式">
+                <label class="style-card"><input type="radio" name="clothStyle" value="pleated"><img src="assets/images/curtain-pleated.jpg" alt="折簾款式參考" width="220" height="140"><span><strong>折簾</strong><small>上方固定打摺</small></span></label>
+                <label class="style-card"><input type="radio" name="clothStyle" value="snake"><img src="assets/images/curtain-snake.jpg" alt="蛇行簾款式參考" width="220" height="140"><span><strong>蛇行簾</strong><small>布面呈連續波浪</small></span></label>
+                <label class="style-card"><input type="radio" name="clothStyle" value="roman"><img src="assets/images/curtain-roman.jpg" alt="羅馬簾款式參考" width="220" height="140"><span><strong>羅馬簾</strong><small>往上收合成橫向摺層</small></span></label>
               </div>
-              <div id="clothPreview" class="style-preview" hidden></div>
+              <div class="material-field">
+                <p class="field-label">布簾材質</p>
+                <div class="material-options" role="radiogroup" aria-label="布簾材質">
+                  <label class="material-card"><input type="radio" name="clothMaterial" value="normal" checked><span>一般單層</span></label>
+                  <label class="material-card"><input type="radio" name="clothMaterial" value="heavy"><span>厚布／雙層／絨布</span></label>
+                </div>
+              </div>
+              <div id="clothActualDimensions" class="dimensions actual-dimensions">
+                <div><label for="clothWidth">布簾單片實際寬（cm）</label><input id="clothWidth" type="text" inputmode="decimal" autocomplete="off" placeholder="例：300" aria-describedby="clothWidthHint"><small id="clothWidthHint">量這片布簾攤平後的左右寬度。</small></div>
+                <div><label for="clothHeight">布簾單片實際高（cm）</label><input id="clothHeight" type="text" inputmode="decimal" autocomplete="off" placeholder="例：240" aria-describedby="clothHeightHint"><small id="clothHeightHint">量這片布簾本身的上下高度。</small></div>
+              </div>
+              <div class="quantity-field"><label id="clothQtyLabel" for="clothQty">布簾同尺寸片數</label><select id="clothQty" class="piece-select"><option value="">請選擇片數</option></select></div>
             </fieldset>
           </div>
           <div class="layer-card" id="sheerCard">
             <label class="check-row layer-title" for="washSheer"><input id="washSheer" type="checkbox"><span>要洗紗簾</span></label>
-            <fieldset id="sheerSettings" hidden disabled>
-              <div class="layer-fields two-fields">
-                <div><label for="sheerStyle">紗簾款式</label><select id="sheerStyle" class="style-select" data-preview="sheerPreview"><option value="">請選擇款式</option><option value="pleated">折簾</option><option value="snake">蛇行簾</option><option value="roman">羅馬簾</option></select></div>
-                <div><label for="sheerQty">紗簾片數（左右合計）</label><select id="sheerQty" class="piece-select"><option value="">請選擇片數</option></select></div>
+            <fieldset id="sheerSettings" hidden disabled aria-label="紗簾設定">
+              <p class="field-label">紗簾款式</p>
+              <p class="small-note style-hint">請點選與您家紗簾相近的款式。</p>
+              <div class="style-options" role="radiogroup" aria-label="紗簾款式">
+                <label class="style-card"><input type="radio" name="sheerStyle" value="pleated"><img src="assets/images/curtain-pleated.jpg" alt="折簾款式參考" width="220" height="140"><span><strong>折簾</strong><small>上方固定打摺</small></span></label>
+                <label class="style-card"><input type="radio" name="sheerStyle" value="snake"><img src="assets/images/curtain-snake.jpg" alt="蛇行簾款式參考" width="220" height="140"><span><strong>蛇行簾</strong><small>布面呈連續波浪</small></span></label>
+                <label class="style-card"><input type="radio" name="sheerStyle" value="roman"><img src="assets/images/curtain-roman.jpg" alt="羅馬簾款式參考" width="220" height="140"><span><strong>羅馬簾</strong><small>往上收合成橫向摺層</small></span></label>
               </div>
-              <div id="sheerPreview" class="style-preview" hidden></div>
+              <div id="sheerActualDimensions" class="dimensions actual-dimensions">
+                <div><label for="sheerWidth">紗簾單片實際寬（cm）</label><input id="sheerWidth" type="text" inputmode="decimal" autocomplete="off" placeholder="例：300" aria-describedby="sheerWidthHint"><small id="sheerWidthHint">量這片紗簾攤平後的左右寬度。</small></div>
+                <div><label for="sheerHeight">紗簾單片實際高（cm）</label><input id="sheerHeight" type="text" inputmode="decimal" autocomplete="off" placeholder="例：240" aria-describedby="sheerHeightHint"><small id="sheerHeightHint">量這片紗簾本身的上下高度。</small></div>
+              </div>
+              <div class="quantity-field"><label id="sheerQtyLabel" for="sheerQty">紗簾同尺寸片數</label><select id="sheerQty" class="piece-select"><option value="">請選擇片數</option></select></div>
             </fieldset>
           </div>
-        </div>
-        <div id="actualGroup">
-          <label for="actualKind">這組窗簾類型</label><select id="actualKind"><option value="cloth">布簾</option><option value="sheer">紗簾</option></select>
-          <div class="layer-fields actual-fields">
-            <div><label for="actualStyle">這組款式</label><select id="actualStyle" class="style-select" data-preview="actualPreview"><option value="">請選擇款式</option><option value="pleated">折簾</option><option value="snake">蛇行簾</option><option value="roman">羅馬簾</option></select></div>
-            <div id="actualMaterialWrap"><label for="actualMaterial">這組布簾材質</label><select id="actualMaterial"><option value="normal">一般單層</option><option value="heavy">厚布／雙層／絨布</option></select></div>
-            <div><label for="actualQty">同尺寸片數</label><select id="actualQty" class="piece-select"><option value="">請選擇片數</option></select></div>
-          </div>
-          <div id="actualPreview" class="style-preview" hidden></div>
-          <p class="small-note">同一組須為相同尺寸、款式及材質；不同項目請再估一組。</p>
         </div>
       </section>
 
@@ -124,7 +135,6 @@
         <div id="quoteList" class="quote-list"></div>
         <div id="installBox" class="install-box" hidden>
           <label class="check-row" for="installHelp"><input id="installHelp" type="checkbox"><span>需要加購到府拆裝協助</span></label>
-          <p id="installRule" class="small-note"></p>
           <p class="small-note">僅含拆下與裝回，<strong class="warning">不含整燙、定型、軌道調整</strong>。若重視洗後造型與垂墜效果，建議由窗簾公司協助。特殊高度、大型窗或需搬家具現場另估。</p>
         </div>
         <div id="quoteTotal" class="total-box" aria-live="polite"></div>

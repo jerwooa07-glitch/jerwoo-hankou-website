@@ -7,21 +7,31 @@
   const money = amount => '$' + amount.toLocaleString('zh-TW');
   const escape = text => String(text).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const measure = () => document.querySelector('input[name="measure"]:checked').value;
+  const choice = name => document.querySelector('input[name="' + name + '"]:checked');
+  const flow = () => measure() === 'window' ? [1, 2, 3, 4, 5, 6] : [1, 2, 4, 5, 6];
+  const quantities = { actual: { cloth: '1', sheer: '1' }, window: { cloth: '', sheer: '' } };
+  let activeMeasure = null;
   const allGroups = () => batches.flatMap(batch => batch.groups);
   const sizeText = group => `${group.measure === 'window' ? '整窗' : '單片布'} ${group.inputWidth} × ${group.inputHeight} cm`;
 
   function showStep(number) {
+    const steps = flow();
+    if (!steps.includes(number)) number = 4;
     step = number;
+    const position = steps.indexOf(step) + 1;
     for (let i = 1; i <= 6; i++) $('step' + i).hidden = i !== step;
     $('formError').textContent = '';
-    $('stepCounter').textContent = `步驟 ${step}／6`;
-    $('stepName').textContent = names[step - 1];
-    $('progressFill').style.width = (step / 6 * 100) + '%';
-    document.querySelector('.progress-track').setAttribute('aria-valuenow', String(step));
+    $('stepCounter').textContent = `步驟 ${position}／${steps.length}`;
+    $('stepName').textContent = step === 4 && measure() === 'actual' ? '單片尺寸與窗簾項目' : names[step - 1];
+    $('progressFill').style.width = (position / steps.length * 100) + '%';
+    document.querySelector('.progress-track').setAttribute('aria-valuenow', String(position));
+    document.querySelector('.progress-track').setAttribute('aria-valuemax', String(steps.length));
     document.querySelectorAll('.step-labels li').forEach((item, i) => {
+      item.hidden = !steps.includes(i + 1);
       if (i === step - 1) item.setAttribute('aria-current', 'step');
       else item.removeAttribute('aria-current');
     });
+    document.querySelector('.step-labels').style.gridTemplateColumns = `repeat(${steps.length}, 1fr)`;
     $('wizardActions').hidden = step === 6;
     $('prevStep').hidden = step === 1;
     $('wizardActions').classList.toggle('single', step === 1);
@@ -36,52 +46,58 @@
 
   function updateMeasure() {
     const isWindow = measure() === 'window';
-    $('widthLabel').textContent = isWindow ? '整個窗戶寬（cm）' : '單片布寬（cm）';
-    $('heightLabel').textContent = isWindow ? '完整窗戶高（cm）' : '單片布高（cm）';
-    $('widthHint').textContent = isWindow ? '量整窗左右寬度，不用自行除以二' : '布攤平後，量左右寬度';
-    $('heightHint').textContent = isWindow ? '量完整上下高度，高度不用減半' : '量布本身的上下高度';
-    $('measureNotice').textContent = isWindow ? '整個窗戶的寬、高量一次。下一步分別選布簾與紗簾的款式、片數。' : '請量單片窗簾布攤平後的寬、高；相同尺寸再填片數。';
-    $('windowGroups').hidden = !isWindow;
-    $('actualGroup').hidden = isWindow;
+    if (activeMeasure !== measure()) {
+      for (const kind of ['cloth', 'sheer']) {
+        if (activeMeasure) quantities[activeMeasure][kind] = $(kind + 'Qty').value;
+        $(kind + 'Qty').value = quantities[measure()][kind];
+      }
+      activeMeasure = measure();
+    }
+    for (const kind of ['cloth', 'sheer']) {
+      $(kind + 'ActualDimensions').hidden = isWindow;
+      $(kind + 'QtyLabel').textContent = (kind === 'cloth' ? '布簾' : '紗簾') + (isWindow ? '片數（左右合計）' : '同尺寸片數');
+    }
+    $('actualMeasureNotice').hidden = isWindow;
+    $('layerQuantityNotice').textContent = isWindow ? '片數請填此層要清洗的總片數（左右合計）。' : '同一類窗簾須為相同尺寸、款式與材質；不同項目請再估一組。';
     const width = Number($('width').value), height = Number($('height').value);
-    $('dimensionSummary').textContent = width > 0 && height > 0 ? `${isWindow ? '整窗尺寸' : '單片布尺寸'}：${width} × ${height} cm` : '';
+    $('dimensionSummary').hidden = !isWindow;
+    $('dimensionSummary').textContent = isWindow && width > 0 && height > 0 ? `整窗尺寸：${width} × ${height} cm` : '';
   }
 
-  function dimensions() {
-    const inputWidth = Number($('width').value), inputHeight = Number($('height').value);
-    if (![inputWidth, inputHeight].every(n => Number.isFinite(n) && n > 0)) throw new Error('請輸入大於 0 的正確寬度與高度。');
+  function dimensions(kind) {
+    const prefix = measure() === 'actual' ? kind : '';
+    const widthValue = $(prefix ? prefix + 'Width' : 'width').value.trim();
+    const heightValue = $(prefix ? prefix + 'Height' : 'height').value.trim();
+    const inputWidth = Number(widthValue), inputHeight = Number(heightValue);
+    if (![widthValue, heightValue].every(value => /^(?:\d+\.?\d*|\.\d+)$/.test(value)) || ![inputWidth, inputHeight].every(n => Number.isFinite(n) && n > 0)) {
+      throw new Error(prefix ? `請輸入${kind === 'cloth' ? '布簾' : '紗簾'}單片的正確寬、高（需大於 0）。` : '請輸入大於 0 的正確寬度與高度。');
+    }
     return { inputWidth, inputHeight, measure: measure() };
   }
 
   function collectGroups() {
-    const input = dimensions();
     const groups = [];
-    if (input.measure === 'window') {
-      for (const kind of ['cloth', 'sheer']) {
-        const prefix = kind === 'cloth' ? 'cloth' : 'sheer';
-        if (!$(kind === 'cloth' ? 'washCloth' : 'washSheer').checked) continue;
-        const label = kind === 'cloth' ? '布簾' : '紗簾';
-        if (!$(prefix + 'Style').value) throw new Error(`請選擇${label}款式。`);
-        if (!$(prefix + 'Qty').value) throw new Error(`請選擇${label}片數。`);
-        groups.push(pricing.estimateGroup({ ...input, kind, style: $(prefix + 'Style').value, qty: Number($(prefix + 'Qty').value), materialKey: kind === 'cloth' ? $('clothMaterial').value : 'sheer' }));
-      }
-      if (!groups.length) throw new Error('請勾選要清洗的布簾或紗簾。');
-    } else {
-      if (!$('actualStyle').value) throw new Error('請選擇這組窗簾款式。');
-      if (!$('actualQty').value) throw new Error('請選擇同尺寸片數。');
-      groups.push(pricing.estimateGroup({ ...input, kind: $('actualKind').value, style: $('actualStyle').value, qty: Number($('actualQty').value), materialKey: $('actualMaterial').value }));
+    for (const kind of ['cloth', 'sheer']) {
+      if (!$(kind === 'cloth' ? 'washCloth' : 'washSheer').checked) continue;
+      const label = kind === 'cloth' ? '布簾' : '紗簾';
+      const selectedStyle = choice(kind + 'Style');
+      if (!selectedStyle) throw new Error(`請選擇${label}款式。`);
+      if (!$(kind + 'Qty').value) throw new Error(`請選擇${label}片數。`);
+      groups.push(pricing.estimateGroup({ ...dimensions(kind), kind, style: selectedStyle.value, qty: Number($(kind + 'Qty').value), materialKey: kind === 'cloth' ? choice('clothMaterial').value : 'sheer' }));
     }
+    if (!groups.length) throw new Error('請勾選要清洗的布簾或紗簾。');
     return groups;
   }
 
   function groupHtml(group, removeButton) {
-    return `<div class="group-result"><div><strong>${escape(group.kindLabel)}｜${escape(group.styleLabel)}${group.kind === 'cloth' ? '｜' + escape(group.materialLabel) : ''}</strong><p>單片 ${money(group.unitPrice)} × ${group.qty} 片</p>${removeButton || ''}</div><div class="price">${money(group.subtotal)}</div></div>`;
+    const dimensionsLine = group.measure === 'actual' ? `<p class="group-size">單片實際尺寸：${group.inputWidth} × ${group.inputHeight} cm</p>` : '';
+    return `<div class="group-result"><div><strong>${escape(group.kindLabel)}｜${escape(group.styleLabel)}${group.kind === 'cloth' ? '｜' + escape(group.materialLabel) : ''}</strong>${dimensionsLine}<p class="unit-price">單片 ${money(group.unitPrice)} × ${group.qty} 片</p>${removeButton || ''}</div><div class="price">${money(group.subtotal)}</div></div>`;
   }
 
   function renderPreview() {
     currentGroups = collectGroups();
     const info = pricing.quoteTotal(currentGroups, false);
-    $('previewSize').textContent = sizeText(currentGroups[0]);
+    $('previewSize').textContent = measure() === 'window' ? sizeText(currentGroups[0]) : '以下尺寸皆為單片窗簾攤平後的實際大小。';
     $('previewGroups').innerHTML = currentGroups.map(group => groupHtml(group)).join('');
     $('previewPieces').textContent = `本${measure() === 'window' ? '窗' : '組'}共洗 ${info.pieces} 片`;
     $('previewTotal').textContent = '洗費試算：' + money(info.washTotal);
@@ -98,7 +114,8 @@
         batches.push({ id: nextBatchId++, groups: currentGroups.map((group, i) => ({ ...group, id: i + 1 })), age: $('age').value });
         currentGroups = null;
       }
-      showStep(step + 1);
+      const steps = flow();
+      showStep(steps[steps.indexOf(step) + 1]);
     } catch (error) { $('formError').textContent = error.message; }
   }
 
@@ -109,11 +126,11 @@
     $('quoteList').innerHTML = batches.length ? batches.map((batch, index) => {
       const label = `第 ${index + 1} ${batch.groups[0].measure === 'window' ? '窗' : '組'}`;
       const total = pricing.quoteTotal(batch.groups, false);
-      return `<article class="batch-summary"><h3>${label}</h3><div class="batch-size">${escape(sizeText(batch.groups[0]))}</div>${batch.groups.map(group => groupHtml(group, `<button type="button" class="text-button remove-group" data-batch="${batch.id}" data-group="${group.id}" aria-label="移除${label}的${group.kindLabel}">移除${group.kindLabel}</button>`)).join('')}<p class="batch-pieces">共 ${total.pieces} 片｜洗費 ${money(total.washTotal)}</p></article>`;
+      const batchSize = batch.groups[0].measure === 'window' ? `<div class="batch-size">${escape(sizeText(batch.groups[0]))}</div>` : '';
+      return `<article class="batch-summary"><h3>${label}</h3>${batchSize}${batch.groups.map(group => groupHtml(group, `<button type="button" class="text-button remove-group" data-batch="${batch.id}" data-group="${group.id}" aria-label="移除${label}的${group.kindLabel}">移除${group.kindLabel}</button>`)).join('')}<p class="batch-pieces">共 ${total.pieces} 片｜洗費 ${money(total.washTotal)}</p></article>`;
     }).join('') : '<p class="empty-quote">清單目前沒有窗簾項目，請再估一組。</p>';
     $('installBox').hidden = !groups.length;
     $('shareBox').hidden = !groups.length;
-    $('installRule').textContent = `拆裝協助費：${money(info.base)}＋總洗費 ${info.rate * 100}%${info.snake ? '（清單含蛇行簾）' : ''}，向上進位至 $50 的倍數。`;
     $('quoteTotal').innerHTML = `<span>共洗 ${info.pieces} 片</span><div class="total-line">洗費試算<b>${money(info.washTotal)}</b></div>${$('installHelp').checked ? `<div class="total-line">拆裝協助費試算<b>${money(info.installFee)}</b></div><strong>預估總計：${money(info.total)}</strong>` : `<strong>洗費合計：${money(info.washTotal)}</strong>`}`;
     $('shareText').value = quoteShareText();
     $('copyStatus').textContent = '';
@@ -130,9 +147,10 @@
     const lines = ['潔屋洗衣漢口店｜窗簾清洗收件前參考', ''];
     batches.forEach((batch, index) => {
       const info = pricing.quoteTotal(batch.groups, false);
-      lines.push(`第 ${index + 1} ${batch.groups[0].measure === 'window' ? '窗' : '組'}｜${sizeText(batch.groups[0])}`);
+      lines.push(`第 ${index + 1} ${batch.groups[0].measure === 'window' ? '窗' : '組'}｜${batch.groups[0].measure === 'window' ? sizeText(batch.groups[0]) : '實際布大小'}`);
       batch.groups.forEach(group => {
         lines.push(`${group.kindLabel}｜${group.styleLabel}${group.kind === 'cloth' ? '｜' + group.materialLabel : ''}`);
+        if (group.measure === 'actual') lines.push(`單片實際尺寸：${group.inputWidth} × ${group.inputHeight} cm`);
         lines.push(`單片 ${money(group.unitPrice)} × ${group.qty} 片 = ${money(group.subtotal)}`);
       });
       lines.push(`共 ${info.pieces} 片｜洗費 ${money(info.washTotal)}`, '');
@@ -151,12 +169,8 @@
     $(kind + 'Card').classList.toggle('selected', checked);
   }
 
-  function updateStyle(select) {
-    const preview = $(select.dataset.preview);
-    preview.hidden = !select.value;
-    if (!select.value) { preview.innerHTML = ''; return; }
-    const hints = { pleated: '折簾：常見打摺窗簾。', snake: '蛇行簾：蛇行軌道或上方孔洞款式。', roman: '羅馬簾：橫向分段，可往上收合。' };
-    preview.innerHTML = `<img src="assets/images/curtain-${select.value}.jpg" alt="${escape(pricing.styles[select.value])}款式參考"><p>${hints[select.value]}</p>`;
+  function updateChoices() {
+    document.querySelectorAll('.style-card, .material-card').forEach(card => card.classList.toggle('selected', card.querySelector('input').checked));
   }
 
   function updateAge() {
@@ -167,12 +181,16 @@
 
   function clearDraft() {
     currentGroups = null;
-    for (const id of ['width', 'height', 'clothStyle', 'clothQty', 'sheerStyle', 'sheerQty', 'actualStyle', 'actualQty']) $(id).value = '';
+    for (const id of ['width', 'height', 'clothWidth', 'clothHeight', 'sheerWidth', 'sheerHeight']) $(id).value = '';
     $('washCloth').checked = false; $('washSheer').checked = false;
-    $('actualKind').value = 'cloth'; $('actualMaterial').value = 'normal'; $('clothMaterial').value = 'normal';
-    $('actualMaterialWrap').hidden = false;
+    document.querySelectorAll('.style-options input').forEach(input => { input.checked = false; });
+    document.querySelector('input[name="clothMaterial"][value="normal"]').checked = true;
+    quantities.actual.cloth = quantities.actual.sheer = '1';
+    quantities.window.cloth = quantities.window.sheer = '';
+    activeMeasure = measure();
+    for (const kind of ['cloth', 'sheer']) $(kind + 'Qty').value = quantities[activeMeasure][kind];
     updateLayer('cloth'); updateLayer('sheer');
-    document.querySelectorAll('.style-select').forEach(updateStyle);
+    updateChoices();
   }
 
   async function copyText(text, field, status) {
@@ -199,14 +217,13 @@
   document.querySelectorAll('.piece-select').forEach(select => {
     for (let n = 1; n <= 10; n++) select.add(new Option(n + ' 片', String(n)));
   });
-  document.querySelectorAll('input[name="measure"]').forEach(input => input.addEventListener('change', updateMeasure));
+  document.querySelectorAll('input[name="measure"]').forEach(input => input.addEventListener('change', () => { updateMeasure(); showStep(step); }));
   $('washCloth').addEventListener('change', () => updateLayer('cloth'));
   $('washSheer').addEventListener('change', () => updateLayer('sheer'));
-  document.querySelectorAll('.style-select').forEach(select => select.addEventListener('change', () => updateStyle(select)));
-  $('actualKind').addEventListener('change', () => { $('actualMaterialWrap').hidden = $('actualKind').value === 'sheer'; });
+  document.querySelectorAll('.style-options input, .material-options input').forEach(input => input.addEventListener('change', updateChoices));
   $('age').addEventListener('change', updateAge);
   $('nextStep').addEventListener('click', nextStep);
-  $('prevStep').addEventListener('click', () => showStep(step - 1));
+  $('prevStep').addEventListener('click', () => { const steps = flow(); showStep(steps[steps.indexOf(step) - 1]); });
   $('installHelp').addEventListener('change', renderQuote);
   $('nextItem').addEventListener('click', () => { clearDraft(); showStep(2); });
   $('resetForm').addEventListener('click', () => {
@@ -218,5 +235,5 @@
   $('copyQuote').addEventListener('click', () => copyText(quoteShareText(), $('shareText'), $('copyStatus')));
   document.querySelectorAll('.copy-link').forEach(button => button.addEventListener('click', () => copyText(estimatorUrl(), $('shareUrl'), $(button.dataset.status || 'linkStatus'))));
   document.querySelector('.wizard-panel').addEventListener('input', () => { currentGroups = null; $('formError').textContent = ''; });
-  updateMeasure(); updateAge(); renderQuote();
+  updateMeasure(); updateChoices(); updateAge(); renderQuote(); showStep(1);
 })();
