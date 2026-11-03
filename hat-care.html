@@ -22,12 +22,16 @@
  .hat-block[aria-label="精品帽保養方案"]{padding-bottom:0;margin-bottom:8px}
  .hat-original-advantages{padding:0;margin:0 0 14px}
  .hat-original-desktop{display:none}
- .hat-original-mobile{display:block}
+ .hat-original-mobile{display:block;font-family:"Noto Sans TC","Noto Sans","Microsoft JhengHei","PingFang TC",sans-serif}
  .hat-original-mobile h2{margin:0 0 8px;padding:10px 12px;border-radius:12px;background:#071f3c;color:#fff;text-align:center;font-size:22px;line-height:1.4}
  .hat-original-list{display:grid;grid-template-columns:1fr;gap:8px;margin:0;padding:0;list-style:none}
- .hat-original-list li{margin:0;padding:8px 10px;background:#fff;border:1px solid #dce6ed;border-radius:12px}
- .hat-original-window{position:relative;width:min(100%,360px);aspect-ratio:180/83;margin:0 auto;overflow:hidden}
- .hat-original-window img{position:absolute;display:block;width:568.888889%;max-width:none;height:auto;left:var(--tile-left);top:-63.855422%}
+ .hat-original-list li{display:grid;grid-template-columns:64px minmax(0,1fr);gap:12px;align-items:center;margin:0;padding:14px 12px;background:#fff;border:1px solid #dce6ed;border-radius:12px}
+ .hat-original-icon{display:grid;place-items:center;width:64px}
+ .hat-original-icon-crop{position:relative;display:block;overflow:hidden;width:var(--icon-width);height:var(--icon-height)}
+ .hat-original-icon-crop img{position:absolute;display:block;width:1024px;max-width:none;height:158px;left:var(--icon-left);top:var(--icon-top)}
+ .hat-original-copy{min-width:0}
+ .hat-original-copy h3{margin:0 0 4px;color:#0b3157;font-size:18px;font-weight:800;line-height:1.45;word-break:normal;overflow-wrap:break-word}
+ .hat-original-copy p{margin:0;color:#283f53;font-size:16px;line-height:1.65;word-break:normal;overflow-wrap:break-word}
 }
 </style></head>
 <body><header>
@@ -51,11 +55,11 @@
 <section aria-label="為什麼選擇潔屋" class="hat-block hat-original-advantages">
 <img class="hat-graphic hat-original-desktop" src="assets/images/hat-advantages-mobile.jpg" alt="為什麼選擇潔屋：專業設備、帽型恢復、深層清潔、抗污鍍膜、精品等級評估" loading="lazy">
 <div class="hat-original-mobile"><h2>為什麼選擇潔屋？</h2><ol class="hat-original-list">
-<li><div class="hat-original-window" role="img" aria-label="專業設備：中部少數擁有專業帽型整形設備" style="--tile-left:-25.000000000%"><img src="assets/images/hat-advantages-mobile.jpg" alt="" aria-hidden="true" loading="lazy"></div></li>
-<li><div class="hat-original-window" role="img" aria-label="帽型恢復專家：依帽款結構調整蒸氣與定型方式" style="--tile-left:-133.888888889%"><img src="assets/images/hat-advantages-mobile.jpg" alt="" aria-hidden="true" loading="lazy"></div></li>
-<li><div class="hat-original-window" role="img" aria-label="深層清潔除異味：去除汗漬與異味，帽內更清新" style="--tile-left:-243.888888889%"><img src="assets/images/hat-advantages-mobile.jpg" alt="" aria-hidden="true" loading="lazy"></div></li>
-<li><div class="hat-original-window" role="img" aria-label="抗污鍍膜保護：延長使用壽命，減少髒污附著" style="--tile-left:-352.777777778%"><img src="assets/images/hat-advantages-mobile.jpg" alt="" aria-hidden="true" loading="lazy"></div></li>
-<li><div class="hat-original-window" role="img" aria-label="精品等級評估：依材質與帽況，客製化保養建議" style="--tile-left:-456.111111111%"><img src="assets/images/hat-advantages-mobile.jpg" alt="" aria-hidden="true" loading="lazy"></div></li>
+<li><div class="hat-original-icon" aria-hidden="true"><span class="hat-original-icon-crop" style="--icon-width:52px;--icon-height:62px;--icon-left:-53px;--icon-top:-55px"><img src="assets/images/hat-advantages-mobile.jpg" alt="" loading="lazy"></span></div><div class="hat-original-copy"><h3>專業設備</h3><p>中部少數擁有<br>專業帽型整形設備</p></div></li>
+<li><div class="hat-original-icon" aria-hidden="true"><span class="hat-original-icon-crop" style="--icon-width:64px;--icon-height:66px;--icon-left:-246px;--icon-top:-54px"><img src="assets/images/hat-advantages-mobile.jpg" alt="" loading="lazy"></span></div><div class="hat-original-copy"><h3>帽型恢復專家</h3><p>依帽款結構調整<br>蒸氣與定型方式</p></div></li>
+<li><div class="hat-original-icon" aria-hidden="true"><span class="hat-original-icon-crop" style="--icon-width:47px;--icon-height:75px;--icon-left:-447px;--icon-top:-54px"><img src="assets/images/hat-advantages-mobile.jpg" alt="" loading="lazy"></span></div><div class="hat-original-copy"><h3>深層清潔除異味</h3><p>去除汗漬與異味，<br>帽內更清新</p></div></li>
+<li><div class="hat-original-icon" aria-hidden="true"><span class="hat-original-icon-crop" style="--icon-width:58px;--icon-height:70px;--icon-left:-645px;--icon-top:-53px"><img src="assets/images/hat-advantages-mobile.jpg" alt="" loading="lazy"></span></div><div class="hat-original-copy"><h3>抗污鍍膜保護</h3><p>延長使用壽命，<br>減少髒污附著</p></div></li>
+<li><div class="hat-original-icon" aria-hidden="true"><span class="hat-original-icon-crop" style="--icon-width:42px;--icon-height:69px;--icon-left:-840px;--icon-top:-55px"><img src="assets/images/hat-advantages-mobile.jpg" alt="" loading="lazy"></span></div><div class="hat-original-copy"><h3>精品等級評估</h3><p>依材質與帽況，<br>客製化保養建議</p></div></li>
 </ol></div></section>
 <section class="hat-block" id="risk"><details class="hat-risk"><summary>洗滌風險與注意事項｜點擊查看完整告知</summary><p>帽款因材質、結構、老化、汗漬及既有損傷不同，清洗或整形後可能有褪色、變形、飾件損傷、黏合處剝離、既有折痕或污漬殘留等風險。高單價、限量或特殊材質帽款，請先告知門市並確認評估。</p><a href="assets/images/精品帽清洗風險告知.png" rel="noopener" target="_blank"><img alt="精品帽完整洗滌風險告知書，點擊可放大" loading="lazy" src="assets/images/精品帽清洗風險告知.png"/></a></details></section>
 <section class="hat-block hat-video"><h2>帽子整形｜實際作業影片</h2><video controls="" playsinline="" poster="assets/images/hat-video-cover.png" preload="metadata"><source src="assets/videos/hat-shaping.mp4" type="video/mp4"/>您的瀏覽器不支援影片播放</video></section>
