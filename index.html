@@ -1,218 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>潔屋洗衣漢口店｜台中西屯專業洗護</title>
-  <meta name="description" content="潔屋洗衣漢口店位於台中西屯漢口商圈，提供帽子保養、羽絨外套、高級服飾、機能服飾、寢具與窗簾洗護，並提供在地收送服務。重視洗前檢查、風險告知與品質把關。" />
-  <meta name="robots" content="index,follow" />
-  <meta property="og:title" content="潔屋洗衣漢口店｜專業洗護・細節把關" />
-  <meta property="og:description" content="台中西屯在地洗護服務。依衣物材質與實際狀況評估，重視每一次託付。" />
-  <meta property="og:type" content="website" />
-  <link rel="canonical" href="https://jerwooa07-glitch.github.io/jerwoo-hankou-website/" />
-  <link rel="stylesheet" href="assets/css/site.css" />
-  <style>
-/* 潔屋洗衣漢口店首頁｜暖白質感 × 品牌藍識別 */
-.home-page{--home-blue:#176fa8;--home-navy:#153d5a;--home-gold:#bd8c36;--home-cream:#f6f2e9;--home-warm:#fbfaf7;background:#fbfaf7;color:#263b49}
-.home-page header{background:rgba(255,255,255,.97);border-bottom:1px solid #d9e5ec}
-.home-page .brand{color:var(--home-navy)}
-.home-page .brand small{color:#687b88}
-.home-page .nav-menu a{color:var(--home-navy)}
-.home-page .nav-menu a:hover{color:var(--home-blue)}
-.home-page .nav-toggle{border-color:#d9e5ec;color:var(--home-navy);background:#fff}
-.home-page .topbar{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px;padding-top:10px;padding-bottom:10px}
-.home-page .brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
-.home-page .brand img{display:block;width:58px;height:auto;max-height:54px;object-fit:contain}
-.home-page .brand div{display:grid;gap:3px}
-.home-page .brand strong{display:block;font-size:18px;line-height:1.25}
-.home-page .brand small{display:block;font-size:12px;line-height:1.4}
-.home-page .nav-menu{display:flex;align-items:center;gap:clamp(13px,1.8vw,25px)}
-.home-page .nav-menu a{font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap}
-.home-page .nav-toggle{display:none;border-radius:7px;padding:7px 11px;font-size:21px;line-height:1.1;cursor:pointer}
-.home-hero{position:relative;overflow:hidden;isolation:isolate;padding:clamp(82px,11vw,136px) 0 clamp(74px,9vw,108px);background:linear-gradient(125deg,#f5f0e7 0%,#fbfaf7 53%,#edf4f8 100%);text-align:center}
-.home-hero:before{content:"";position:absolute;z-index:-1;width:min(54vw,670px);height:min(54vw,670px);right:-12%;top:-52%;border:1px solid rgba(23,111,168,.14);border-radius:50%;box-shadow:0 0 0 44px rgba(255,255,255,.22),0 0 0 92px rgba(255,255,255,.13)}
-.home-hero:after{content:"";position:absolute;z-index:-1;width:min(30vw,380px);height:min(30vw,380px);left:-12%;bottom:-56%;border:1px solid rgba(189,140,54,.17);border-radius:50%}
-.home-hero-inner{position:relative;z-index:1;max-width:880px}
-.home-kicker,.home-eyebrow{margin:0;color:var(--home-gold);font-size:11px;font-weight:800;letter-spacing:.2em}
-.home-hero h1{margin:26px 0 17px;color:var(--home-navy);font-family:"Noto Serif TC","Songti TC",serif;font-size:clamp(42px,6.3vw,72px);font-weight:650;line-height:1.34;letter-spacing:.045em}
-.home-hero h1 em{color:var(--home-blue);font-style:normal}
-.home-subtitle{margin:0;color:#5d7180;font-size:clamp(16px,2vw,20px);letter-spacing:.2em}
-.home-actions,.store-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:32px}
-.home-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 25px;border:1px solid #b7ccda;border-radius:5px;font-size:14px;font-weight:750;letter-spacing:.04em;text-decoration:none;transition:background .2s,color .2s,border-color .2s}
-.home-btn-primary{background:var(--home-blue);border-color:var(--home-blue);color:#fff}
-.home-btn-primary:hover{background:#125b8b;border-color:#125b8b;color:#fff}
-.home-btn-outline{background:rgba(255,255,255,.72);color:var(--home-navy)}
-.home-btn-outline:hover{background:#fff;color:var(--home-blue);border-color:#8eb5ce}
-.home-location{display:block;margin-top:27px;color:#738391;font-size:12px;letter-spacing:.1em}
-.home-principles{background:#fff;padding:22px 0;border-bottom:1px solid #e7edf1;border-top:1px solid rgba(255,255,255,.8)}
-.principle-strip{display:grid;grid-template-columns:repeat(3,1fr);max-width:850px}
-.principle-strip>div{display:flex;justify-content:center;align-items:center;gap:12px;padding:8px 15px;border-right:1px solid #e5edf2}
-.principle-strip>div:last-child{border-right:0}
-.principle-strip span{color:var(--home-gold);font-family:Georgia,serif;font-size:12px;letter-spacing:.08em}
-.principle-strip strong{color:var(--home-navy);font-size:14px;letter-spacing:.08em}
-.home-services{padding:clamp(66px,8.5vw,100px) 0;background:#fbfaf7;scroll-margin-top:82px}
-.home-section-heading{text-align:center;margin:0 auto 38px}
-.home-section-heading h2,.store-intro h2{margin:12px 0;color:var(--home-navy);font-family:"Noto Serif TC","Songti TC",serif;font-size:clamp(29px,4vw,42px);font-weight:650;letter-spacing:.06em}
-.home-section-heading p{margin:0;color:#71818c;font-size:14px;letter-spacing:.04em}
-.home-service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.home-service-card{display:flex;flex-direction:column;min-height:205px;min-width:0;padding:25px 25px 22px;background:#fff;border:1px solid #e3e9ec;color:inherit;text-decoration:none;transition:transform .2s,border-color .2s,box-shadow .2s}
-.home-service-card:hover{transform:translateY(-3px);border-color:#a9c8da;box-shadow:0 14px 35px rgba(27,76,106,.08)}
-.home-service-number{display:block;margin-bottom:16px;color:var(--home-gold);font-family:Georgia,serif;font-size:12px;letter-spacing:.18em}
-.home-service-card h3{margin:0 0 9px;color:var(--home-navy);font-family:"Noto Serif TC","Songti TC",serif;font-size:19px;font-weight:650;letter-spacing:.03em}
-.home-service-card p{margin:0;color:#6f7e88;font-size:13px;line-height:1.85}
-.home-service-link{display:inline-flex;align-items:center;gap:7px;margin-top:auto;padding-top:18px;color:var(--home-blue);font-size:12px;font-weight:800;letter-spacing:.04em}
-.home-pickup-callout{display:flex;justify-content:space-between;align-items:center;gap:22px;margin-top:22px;padding:22px 26px;background:#edf4f8;border:1px solid #d9e5ec}
-.home-pickup-callout strong{display:block;color:var(--home-navy);font-size:16px;letter-spacing:.06em}
-.home-pickup-callout p{margin:5px 0 0;color:#657987;font-size:13px}
-.home-pickup-callout a{flex-shrink:0;color:var(--home-blue);font-size:13px;font-weight:800;text-decoration:underline;text-underline-offset:4px}
-.home-store{padding:clamp(64px,8vw,92px) 0;background:#f3efe6;scroll-margin-top:82px}
-.store-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:8%;align-items:center}
-.store-intro h2{line-height:1.55}
-.store-intro p{max-width:390px;color:#667783;line-height:1.9;font-size:14px}
-.store-details{padding:30px 34px;background:rgba(255,255,255,.88);border:1px solid #e1e6e7}
-.store-detail{display:grid;grid-template-columns:94px 1fr;gap:16px;padding:13px 0;border-bottom:1px solid #e9edef}
-.store-detail:first-child{padding-top:0}
-.store-detail span{color:var(--home-gold);font-size:13px;letter-spacing:.08em}
-.store-detail strong{color:var(--home-navy);font-size:14px;font-weight:650;line-height:1.8}
-.store-detail a{color:inherit}
-.store-actions{justify-content:flex-start;margin-top:22px}
-.home-footer{padding:30px 0;background:#153d5a;color:#f3f7fa}
-.home-footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px}
-.home-footer-inner strong{display:block;font-size:16px;letter-spacing:.08em}
-.home-footer-inner span,.home-footer-inner small{color:#d2e0e9;font-size:12px;letter-spacing:.04em}
-.home-footer-inner span{display:block;margin-top:5px}
-.home-page .mobile-cta{box-shadow:0 10px 28px rgba(21,61,90,.18)}
-.home-page .mobile-cta a:first-child{background:#fff;color:var(--home-navy)}
-.home-page .mobile-cta a:last-child{background:var(--home-blue);color:#fff}
-@media(max-width:900px){.home-service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.store-layout{grid-template-columns:1fr;gap:24px}.store-intro p{max-width:650px}}
-@media(max-width:820px){.home-page .topbar{position:relative;min-height:70px}.home-page .nav-toggle{display:block}.home-page .nav-menu{display:none;position:absolute;left:0;right:0;top:100%;z-index:20;padding:12px 20px;background:#fff;border-top:1px solid #d9e5ec;border-bottom:1px solid #d9e5ec;box-shadow:0 12px 24px rgba(21,61,90,.08);flex-direction:column;align-items:stretch;gap:0}.home-page .nav-menu.open{display:flex}.home-page .nav-menu a{padding:12px 4px;border-bottom:1px solid #edf2f5;font-size:14px}.home-page .nav-menu a:last-child{border-bottom:0}}
-@media(max-width:600px){.home-hero{padding:76px 0 68px}.home-hero h1{font-size:42px;margin-top:23px}.home-principles{padding:15px 0}.principle-strip>div{gap:7px;padding:8px 4px}.principle-strip strong{font-size:12px}.principle-strip span{font-size:10px}.home-services{padding:56px 0}.home-section-heading{margin-bottom:26px}.home-service-grid{gap:11px}.home-service-card{min-height:0;padding:21px 17px}.home-service-number{margin-bottom:11px}.home-service-card h3{font-size:17px}.home-service-card p{font-size:12px}.home-service-link{padding-top:13px}.home-pickup-callout{align-items:flex-start;flex-direction:column;padding:20px}.home-pickup-callout a{margin-top:2px}.home-store{padding:56px 0}.store-details{padding:22px 18px}.store-detail{grid-template-columns:75px 1fr;gap:10px}.store-actions{gap:9px}.store-actions .home-btn{padding:0 15px;font-size:12px;min-height:44px}.home-footer-inner{align-items:flex-start;flex-direction:column;gap:12px}}
-@media(prefers-reduced-motion:reduce){.home-service-card,.home-btn{transition:none}}
-
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>潔屋洗衣漢口店｜品牌理念與門市服務</title>
+<style>
+:root{--blue:#176fa8;--navy:#163e5b;--gold:#b78b43;--cream:#f5f1e8;--warm:#fbfaf7;--mist:#edf4f8;--ink:#294253;--muted:#6f7d84;--line:#dce6eb;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;line-height:1.75}
+a{color:inherit;text-decoration:none}.wrap{width:min(1160px,calc(100% - 56px));margin:auto}
+header{background:rgba(255,255,255,.96);border-bottom:1px solid var(--line)}.topbar{min-height:86px;display:flex;align-items:center;justify-content:space-between;gap:32px}.brand{display:flex;align-items:center;gap:13px;min-width:265px}.brand img{width:58px;height:53px;object-fit:contain}.brand-text strong{display:block;font-size:18px;line-height:1.35;color:var(--navy);letter-spacing:.06em}.brand-text small{display:block;margin-top:3px;color:#778995;font-size:11px;letter-spacing:.09em}.nav{display:flex;align-items:center;gap:25px;font-size:14px;font-weight:650;color:#35576c}.mobile-menu{display:none}.nav>a,.nav details>summary{padding:9px 0;cursor:pointer;list-style:none}.nav details{position:relative}.nav details>summary::-webkit-details-marker{display:none}.nav details>summary:after{content:"⌄";margin-left:6px;color:var(--blue)}.dropdown{position:absolute;right:0;top:39px;z-index:10;width:220px;padding:9px;background:white;border:1px solid var(--line);box-shadow:0 14px 40px #163e5b18;border-radius:8px}.dropdown a{display:block;padding:10px 12px;border-radius:5px;font-size:13px}.dropdown a:hover{background:var(--mist);color:var(--blue)}.nav a:hover,.nav summary:hover{color:var(--blue)}.mobile-panel a:hover,.mobile-panel summary:hover{color:var(--blue);background:#f4f8fa}
+.hero{position:relative;overflow:hidden;background:linear-gradient(112deg,#f5f1e8 0%,#fbfaf7 53%,#edf4f8 100%);padding:106px 0 96px}.hero:before{content:"";position:absolute;width:640px;height:640px;right:-180px;top:-390px;border:1px solid #176fa81c;border-radius:50%;box-shadow:0 0 0 44px #fff3,0 0 0 92px #fff2}.hero:after{content:"";position:absolute;width:420px;height:420px;left:-270px;bottom:-300px;border:1px solid #b78b4333;border-radius:50%}.hero-inner{position:relative;z-index:1;max-width:920px;text-align:center}.eyebrow{font-size:11px;font-weight:800;letter-spacing:.23em;color:var(--gold)}.hero h1{margin:22px 0 18px;color:var(--navy);font-family:"Noto Serif TC","Songti TC",serif;font-size:clamp(42px,5.3vw,68px);font-weight:650;line-height:1.42;letter-spacing:.06em}.hero h1 em{font-style:normal;color:var(--blue)}.hero-sub{font-size:18px;letter-spacing:.22em;color:#5d7180;margin:0}.hero-note{margin:18px 0 0;color:#7c8990;font-size:13px;letter-spacing:.08em}.actions{display:flex;justify-content:center;gap:13px;flex-wrap:wrap;margin-top:31px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 27px;border-radius:5px;border:1px solid #a9c4d5;font-size:14px;font-weight:750;letter-spacing:.04em}.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}.btn.secondary{background:#ffffffa8;color:var(--navy)}.btn:hover{filter:brightness(.97)}
+.mission{padding:105px 0 96px;background:#fff}.mission-layout{display:grid;grid-template-columns:.7fr 1.6fr;gap:8%;align-items:start}.mission-label{padding-top:8px}.mission-label .eyebrow{display:block}.mission-label h2{margin:17px 0 0;color:var(--navy);font-family:"Noto Serif TC","Songti TC",serif;font-size:35px;line-height:1.5;letter-spacing:.08em}.mission-label .en{display:block;margin-top:11px;color:#a7b3b9;font-family:Georgia,serif;font-size:12px;letter-spacing:.18em}.mission-copy{max-width:760px}.mission-copy .lead{font-size:19px;font-weight:650;line-height:1.9;color:#4c6576;margin:0 0 22px}.mission-copy p{font-size:15px;line-height:2.15;color:#667781;margin:0 0 17px}.mission-copy .closing{display:block;margin:28px 0 0;padding:22px 0 0;border-top:1px solid #e8edf0;background:transparent;color:var(--navy);font-family:"Noto Serif TC","Songti TC",serif;font-size:21px;font-weight:650;letter-spacing:.04em;text-align:left}
+.values{background:#f4f6f5;padding:82px 0 88px}.section-heading{text-align:center;margin-bottom:40px}.section-heading h2{font-family:"Noto Serif TC","Songti TC",serif;font-size:34px;font-weight:650;color:var(--navy);letter-spacing:.09em;margin:12px 0 6px}.section-heading p{font-size:14px;color:#78858b;margin:0}.value-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.value-card{background:#fff;border:1px solid #e4e9e6;padding:27px 23px 26px;min-height:210px}.value-no{font-family:Georgia,serif;font-size:12px;letter-spacing:.16em;color:var(--gold)}.value-card h3{margin:20px 0 9px;color:#31546b;font-size:18px;letter-spacing:.05em}.value-card p{margin:0;color:#748188;font-size:13px;line-height:1.9}
+.closing-band{background:linear-gradient(110deg,#f1eee6,#edf4f8);padding:62px 0;text-align:center}.closing-band h2{margin:0 0 10px;font-family:"Noto Serif TC","Songti TC",serif;font-size:31px;line-height:1.5;color:var(--navy);letter-spacing:.08em}.closing-band p{margin:0;color:#73828a;font-size:14px}.closing-band .actions{margin-top:24px}
+.store{padding:88px 0 92px;background:#fff}.store-layout{display:grid;grid-template-columns:1fr 1.12fr;gap:7%;align-items:center}.store-photo{min-height:330px;background:linear-gradient(135deg,#f3f0e8,#edf3f6);border:1px solid #e4e8e8;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#88949a;position:relative;overflow:hidden}.store-photo:before,.store-photo:after{content:"";position:absolute;border:1px solid #176fa81c;border-radius:50%;width:370px;height:370px}.store-photo:before{left:-190px;top:-210px}.store-photo:after{right:-190px;bottom:-230px}.store-photo strong{position:relative;z-index:1;color:#537186;font-size:18px;letter-spacing:.1em}.store-photo span{position:relative;z-index:1;margin-top:7px;font-size:12px}.store-info .eyebrow{display:block}.store-info h2{font-family:"Noto Serif TC","Songti TC",serif;font-size:31px;color:var(--navy);line-height:1.5;margin:13px 0 22px;letter-spacing:.05em}.store-row{display:grid;grid-template-columns:86px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid #edf0f1;font-size:14px}.store-row span{color:var(--gold)}.store-row strong{font-weight:600;color:#425c6c}.store-info .actions{justify-content:flex-start;margin-top:22px}
+footer{background:var(--navy);color:#fff;padding:28px 0}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer-inner strong{font-size:16px;letter-spacing:.08em}.footer-inner small{display:block;color:#cad9e1;font-size:12px;margin-top:4px}.footer-slogan{font-family:"Noto Serif TC","Songti TC",serif;color:#dce8ef;font-size:14px;letter-spacing:.1em}
+@media(max-width:900px){.nav{gap:15px}.mission-layout{grid-template-columns:1fr;gap:24px}.mission-label h2 br{display:none}.value-grid{grid-template-columns:repeat(2,1fr)}.store-layout{grid-template-columns:1fr;gap:32px}.store-photo{min-height:250px}}
+@media(max-width:680px){.wrap{width:min(100% - 34px,560px)}.topbar{min-height:74px;gap:10px}.brand{min-width:0;gap:8px}.brand img{width:49px;height:46px}.brand-text strong{font-size:15px}.brand-text small{font-size:10px}.desktop-nav{display:none}.mobile-menu{display:block;position:relative;margin-left:auto}.mobile-menu>summary{display:flex;align-items:center;gap:7px;list-style:none;border:1px solid #d8e3e9;border-radius:5px;padding:8px 11px;color:var(--navy);font-size:12px;font-weight:700;cursor:pointer}.mobile-menu>summary::-webkit-details-marker{display:none}.menu-icon{font-size:15px;color:var(--blue)}.mobile-panel{position:absolute;right:0;top:43px;z-index:20;width:min(290px,calc(100vw - 34px));padding:10px;background:#fff;border:1px solid var(--line);border-radius:8px;box-shadow:0 14px 35px #163e5b22;display:flex;flex-direction:column}.mobile-panel>a,.mobile-services>summary{display:flex;justify-content:space-between;padding:11px 12px;border-bottom:1px solid #edf1f3;color:#35576c;font-size:13px;font-weight:650;list-style:none}.mobile-services>summary::-webkit-details-marker{display:none}.mobile-service-links{padding:4px 0 7px 12px;display:flex;flex-direction:column}.mobile-service-links a{padding:8px 11px;color:#647987;font-size:12px}.mobile-services>summary span{color:var(--blue)}.dropdown{right:-8px}.hero{padding:77px 0 68px}.mission{padding:67px 0 62px}.hero h1{font-size:41px;letter-spacing:.035em;margin:18px 0 13px}.hero-sub{font-size:14px;letter-spacing:.13em}.hero-note{font-size:11px}.mission-label h2{font-size:29px;margin-top:9px}.mission-copy .lead{font-size:17px}.mission-copy p{font-size:14px;line-height:2}.mission-copy .closing{font-size:19px}.values{padding:60px 0}.section-heading{margin-bottom:25px}.section-heading h2{font-size:28px}.value-grid{grid-template-columns:1fr 1fr;gap:9px}.value-card{padding:20px 15px;min-height:180px}.value-card h3{font-size:16px;margin:15px 0 7px}.value-card p{font-size:12px}.closing{padding:48px 0}.closing-band h2{font-size:25px}.store{padding:62px 0}.store-photo{min-height:210px}.store-info h2{font-size:27px}.store-row{grid-template-columns:72px 1fr;gap:8px;font-size:13px}.footer-inner{align-items:flex-start;flex-direction:column;gap:9px}.footer-slogan{font-size:12px}}
 </style>
 </head>
-<body class="home-page">
-<header>
-  <div class="container topbar">
-    <a class="brand" href="index.html" aria-label="潔屋洗衣漢口店首頁">
-      <img src="assets/images/jerwoo-logo.jpg" alt="JERWOO 潔屋洗衣漢口店" />
-      <div><strong>潔屋洗衣漢口店</strong><small>精緻洗護 × 在地收送</small></div>
-    </a>
-    <button class="nav-toggle" type="button" aria-label="開啟導覽" aria-expanded="false">☰</button>
-    <nav class="nav-menu" aria-label="主導覽">
-      <a href="index.html">首頁</a>
-      <a href="#services">服務項目</a>
-      <a href="prices.html">價目表</a>
-      <a href="pickup.html">到府收送</a>
-      <a href="knowledge.html">洗衣知識</a>
-      <a href="contact.html">聯絡我們</a>
-    </nav>
+<body>
+<header><div class="wrap topbar">
+  <a class="brand" href="#top"><img src="assets/images/jerwoo-header-logo.jpg" alt="JERWOO 潔屋標誌"><span class="brand-text"><strong>潔屋洗衣漢口店</strong><small>門市服務・細節把關</small></span></a>
+  <nav class="nav desktop-nav" aria-label="主導覽">
+    <a href="#top">首頁</a><a href="#mission">品牌理念</a>
+    <details><summary>服務項目</summary><div class="dropdown"><a href="hat-care.html">帽子清潔與保養</a><a href="down-jacket.html">羽絨外套洗護</a><a href="premium-care.html">高級服飾洗護</a><a href="ski-goretex.html">雪衣雪褲・機能服飾</a><a href="bedding.html">寢具清洗</a><a href="curtain.html">窗簾清洗</a><a href="pickup.html">到府收送服務</a></div></details>
+    <a href="prices.html">價目表</a><a href="knowledge.html">洗衣知識</a><a href="contact.html">聯絡我們</a>
+  </nav>
+  <details class="mobile-menu"><summary><span class="menu-icon">☰</span><span>選單</span></summary><div class="mobile-panel">
+    <a href="#top">首頁</a><a href="#mission">品牌理念</a>
+    <details class="mobile-services"><summary>服務項目 <span>＋</span></summary><div class="mobile-service-links"><a href="hat-care.html">帽子清潔與保養</a><a href="down-jacket.html">羽絨外套洗護</a><a href="premium-care.html">高級服飾洗護</a><a href="ski-goretex.html">雪衣雪褲・機能服飾</a><a href="bedding.html">寢具清洗</a><a href="curtain.html">窗簾清洗</a><a href="pickup.html">到府收送服務</a></div></details>
+    <a href="prices.html">價目表</a><a href="knowledge.html">洗衣知識</a><a href="contact.html">聯絡我們</a>
+  </div></details>
+</div></header>
+<main id="top">
+<section class="hero"><div class="wrap hero-inner">
+  <div class="eyebrow">TAICHUNG · XITUN · HANKOU</div>
+  <h1>每一次託付，<br><em>都值得我們認真對待。</em></h1>
+  <p class="hero-note">潔屋洗衣漢口店｜台中西屯・漢口商圈</p>
+  <div class="actions"><a class="btn primary" href="#mission">認識我們的堅持</a><a class="btn secondary" href="contact.html">聯絡門市</a></div>
+</div></section>
+<section class="mission" id="mission"><div class="wrap mission-layout">
+  <div class="mission-label"><span class="eyebrow">OUR PHILOSOPHY</span><h2>我們的<br>經營宗旨</h2><span class="en">JERWOO HANKOU</span></div>
+  <div class="mission-copy">
+    <p class="lead">洗衣不只是把衣物送洗，更是一份需要被妥善對待的託付。</p>
+    <p>每一件衣物都有不同的材質與特性，也有各自的使用需求。潔屋洗衣漢口店重視收件時的品項與件數確認，了解客人的送洗需求與在意之處，讓每一次服務都有清楚的溝通與妥善安排。</p>
+    <p class="closing">我們珍惜每一次相遇，也重視每一次託付。</p>
   </div>
-</header>
-
-<main>
-  <section class="home-hero">
-    <div class="container home-hero-inner">
-      <p class="home-kicker">台中西屯・漢口商圈｜潔屋洗衣漢口店</p>
-      <h1>讓每一份託付，<br /><em>都值得安心。</em></h1>
-      <p class="home-subtitle">專業洗護・細節把關</p>
-      <div class="home-actions">
-        <a class="home-btn home-btn-primary" href="#services">探索洗護服務</a>
-        <a class="home-btn home-btn-outline" href="#" data-line>LINE 文字諮詢</a>
-      </div>
-      <span class="home-location">台中市西屯區寧夏路 43 號</span>
-    </div>
-    <div class="hero-orbit hero-orbit-one" aria-hidden="true"></div>
-    <div class="hero-orbit hero-orbit-two" aria-hidden="true"></div>
-  </section>
-
-  <section class="home-principles" aria-label="潔屋洗衣漢口店服務原則">
-    <div class="container principle-strip">
-      <div><span>01</span><strong>洗前檢查</strong></div>
-      <div><span>02</span><strong>事先告知</strong></div>
-      <div><span>03</span><strong>洗後把關</strong></div>
-    </div>
-  </section>
-
-  <section class="home-services" id="services">
-    <div class="container">
-      <div class="home-section-heading">
-        <span class="home-eyebrow">OUR SERVICES</span>
-        <h2>專業洗護服務</h2>
-        <p>依材質、洗標與實際衣況，評估合適的處理方式。</p>
-      </div>
-      <div class="home-service-grid">
-        <a class="home-service-card" href="hat-care.html">
-          <span class="home-service-number">SERVICE 01</span>
-          <h3>帽子清潔與保養</h3>
-          <p>清潔、汗漬與異味處理，並留意帽型整理與細節照顧。</p>
-          <span class="home-service-link">了解帽子服務 ↗</span>
-        </a>
-        <a class="home-service-card" href="down-jacket.html">
-          <span class="home-service-number">SERVICE 02</span>
-          <h3>羽絨外套洗護</h3>
-          <p>依洗標、填充結構與衣物狀況，評估合適洗程與乾燥整理。</p>
-          <span class="home-service-link">了解羽絨洗護 ↗</span>
-        </a>
-        <a class="home-service-card" href="premium-care.html">
-          <span class="home-service-number">SERVICE 03</span>
-          <h3>高級服飾洗護</h3>
-          <p>精品、大衣、羊毛、真絲及特殊材質衣物，逐件評估處理。</p>
-          <span class="home-service-link">了解高級服飾 ↗</span>
-        </a>
-        <a class="home-service-card" href="ski-goretex.html">
-          <span class="home-service-number">SERVICE 04</span>
-          <h3>雪衣雪褲・機能服飾</h3>
-          <p>針對機能衣物與滑雪裝備，依洗標與材質安排適合洗護方式。</p>
-          <span class="home-service-link">了解機能服飾洗護 ↗</span>
-        </a>
-        <a class="home-service-card" href="bedding.html">
-          <span class="home-service-number">SERVICE 05</span>
-          <h3>寢具清洗</h3>
-          <p>棉被、羽絨被、毛毯與床組等居家寢具清潔保養。</p>
-          <span class="home-service-link">了解寢具清洗 ↗</span>
-        </a>
-        <a class="home-service-card" href="curtain.html">
-          <span class="home-service-number">SERVICE 06</span>
-          <h3>窗簾清洗</h3>
-          <p>依窗簾尺寸、材質與結構評估，確認處理方式及收費後安排。</p>
-          <span class="home-service-link">了解窗簾清洗 ↗</span>
-        </a>
-      </div>
-      <div class="home-pickup-callout">
-        <div><strong>到府收送服務</strong><p>提供在地收送安排，服務區域與時間請先與門市確認。</p></div>
-        <a href="pickup.html">查看收送方式 ↗</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="home-store" id="store">
-    <div class="container store-layout">
-      <div class="store-intro">
-        <span class="home-eyebrow">VISIT OUR STORE</span>
-        <h2>歡迎來到<br />潔屋洗衣漢口店</h2>
-        <p>實際衣況由門市檢視，洗護方式與相關風險會先向您說明。</p>
-      </div>
-      <div class="store-details">
-        <div class="store-detail"><span>地址</span><strong>台中市西屯區寧夏路 43 號</strong></div>
-        <div class="store-detail"><span>營業時間</span><strong>週一至週五 09:00–20:00<br />週六 10:00–14:00<br />週日、國定假日公休</strong></div>
-        <div class="store-detail"><span>電話</span><strong><a href="tel:0423138841">04-2313-8841</a></strong></div>
-        <div class="store-actions">
-          <a class="home-btn home-btn-primary" href="https://share.google/Bz7wYXgte5AjcsOQa" target="_blank" rel="noopener">Google 地圖導航</a>
-          <a class="home-btn home-btn-outline" href="#" data-line>LINE 文字諮詢</a>
-        </div>
-      </div>
-    </div>
-  </section>
+</div></section>
+<section class="values"><div class="wrap">
+  <div class="section-heading"><span class="eyebrow">OUR COMMITMENT</span><h2>我們堅持的四件事</h2><p>從收件到交件，做好門市第一線服務。</p></div>
+  <div class="value-grid">
+    <article class="value-card"><span class="value-no">01 / CHECK</span><h3>仔細核對</h3><p>收件時確認品項與件數，交件時再次核對。</p></article>
+    <article class="value-card"><span class="value-no">02 / UNDERSTAND</span><h3>了解需求</h3><p>留意衣物材質與基本特性，聆聽客人在意之處。</p></article>
+    <article class="value-card"><span class="value-no">03 / COMMUNICATE</span><h3>誠實溝通</h3><p>清楚說明服務方式與相關注意事項，讓客人了解送洗安排。</p></article>
+    <article class="value-card"><span class="value-no">04 / HANDOVER</span><h3>妥善交付</h3><p>做好取件通知與交件確認，讓每一次服務都有始有終。</p></article>
+  </div>
+</div></section>
+<section class="closing-band"><div class="wrap"><span class="eyebrow">A PROMISE WE KEEP</span><h2>不輕易承諾做不到的事，<br>但對每一份託付，都認真以待。</h2><p>有送洗需求，歡迎先與門市聯繫，了解適合的服務方式。</p><div class="actions"><a class="btn primary" href="contact.html">聯絡潔屋洗衣漢口店</a></div></div></section>
+<section class="store"><div class="wrap store-layout">
+  <div class="store-photo"><strong>門市外觀照片預留位置</strong><span>待補上潔屋洗衣漢口店實景照</span></div>
+  <div class="store-info"><span class="eyebrow">VISIT OUR STORE</span><h2>歡迎來到<br>潔屋洗衣漢口店</h2>
+    <div class="store-row"><span>門市地址</span><strong>台中市西屯區寧夏路 43 號</strong></div>
+    <div class="store-row"><span>營業時間</span><strong>週一至週五 09:00–20:00<br>週六 10:00–14:00<br>週日、國定假日公休</strong></div>
+    <div class="store-row"><span>聯絡電話</span><strong>04-2313-8841</strong></div>
+    <div class="actions"><a class="btn primary" href="https://share.google/Bz7wYXgte5AjcsOQa" target="_blank" rel="noopener">Google 地圖導航</a><a class="btn secondary" href="contact.html">聯絡門市</a></div>
+  </div>
+</div></section>
 </main>
-
-<footer class="home-footer">
-  <div class="container home-footer-inner">
-    <div><strong>潔屋洗衣漢口店</strong><span>台中西屯・精緻洗護 × 在地收送</span></div>
-    <small>讓每一份託付，都值得安心。</small>
-  </div>
-</footer>
-<div class="mobile-cta"><a href="prices.html">查看價目</a><a href="#" data-line>LINE 詢問</a></div>
-<script src="assets/js/site.js"></script>
-</body>
-</html>
+<footer><div class="wrap footer-inner"><div><strong>潔屋洗衣漢口店</strong><small>台中西屯・細心服務・誠信溝通</small></div><div class="footer-slogan">每一次託付，都值得我們認真對待。</div></div></footer>
+</body></html>
