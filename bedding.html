@@ -18,6 +18,13 @@
 .bed-sgs-originals p{font-size:13px;line-height:1.7;color:#4c6375}
 .bed-original-report{margin-top:9px;border:1px solid #d4e4f0;border-radius:12px;background:white;overflow:hidden}
 .bed-original-report summary{cursor:pointer;padding:12px 14px;font-weight:700;color:#0d527c}
+.bed-original-report summary{justify-content:flex-start;gap:9px}
+@media(max-width:360px){.bed-report>summary{padding-inline:12px;gap:8px}}
+.bed-original-report summary:focus-visible{outline:2px solid #176b9e;outline-offset:-3px}
+.bed-result{margin-left:auto;padding:3px 8px;border-radius:8px;background:#edf6fc;color:#10466c;font-size:13px;white-space:nowrap}
+.bed-result-chevron{width:7px;height:7px;flex:0 0 7px;border-right:2px solid;border-bottom:2px solid;transform:rotate(45deg);margin:0 3px 4px 1px}
+.bed-original-report[open] .bed-result-chevron{transform:rotate(225deg);margin-bottom:0}
+.bed-original-report .bed-report-meta{margin:0 14px;font-size:12px;color:#526979}
 .bed-original-report img{display:block;width:100%;max-width:640px;height:auto;margin:0 auto;padding:10px;box-sizing:border-box}
 @media(max-width:760px){.bed-hero-inner{display:flex;flex-direction:column;align-items:stretch;gap:14px}.bed-hero-visual{order:0;height:auto;min-height:0;aspect-ratio:4/3;margin:0}.bed-hero-visual img{height:100%}.bed-card-photo{height:210px}}
 </style></head><body>
@@ -40,6 +47,28 @@
 </header>
 <main><section class="bed-hero"><div class="container bed-hero-inner"><div class="bed-kicker">潔屋寢具專業洗護</div><h1>每天相伴 8 小時，<br/>潔淨更要重視親膚。</h1><p>床單、枕套與棉被，長時間貼近我們的肌膚。對潔屋而言，寢具清洗不只是去除髒污，更重視洗後品質與每一道處理環節。</p><div class="bed-hero-actions"><a class="btn primary" href="https://lin.ee/ZWFcFDN" rel="noopener" target="_blank">LINE 諮詢寢具清洗</a><a class="btn ghost" href="#bed-advantages">了解我們的洗護堅持</a></div><div class="bed-hero-visual"><img alt="柔軟潔白的寢具示意照片" src="assets/images/bedding-indoor-visual.jpg"/></div></div></section>
 <section class="bed-section" id="bed-advantages"><div class="container"><div class="bed-section-head"><span class="bed-eyebrow">我們重視的三件事</span><h2>寢具潔淨，不只聞起來舒服。</h2><p>從親膚考量、洗後產品檢測，到晾曬環境，讓每一道環節都有清楚的把關方向。</p></div><div class="bed-grid"><article class="bed-card"><div class="bed-card-photo"><img alt="親膚寢具示意照片" src="assets/images/bedding-skin-visual.jpg"/></div><div class="bed-num">01</div><h3>長時間貼近肌膚<br/>更重視親膚感受</h3><p>寢具每天陪伴我們長時間休息。我們不以濃郁香味作為潔淨的唯一標準，而是重視洗後布料的清潔品質與使用感受。</p></article><article class="bed-card"><div class="bed-card-photo"><img alt="潔屋 SGS 原始檢測報告首頁" src="assets/images/bedding-sgs-original-reports-preview.jpg"/></div><div class="bed-num">02</div><h3>完成水洗後送驗<br/>SGS 四項檢測</h3><p>送交 SGS 檢測的是完成水洗程序後的產品，而不只是單一洗劑。重視整體洗滌後的實際檢測結果。</p></article><article class="bed-card"><div class="bed-card-photo"><img alt="乾淨摺疊的寢具示意照片" src="assets/images/bedding-indoor-visual.jpg"/></div><div class="bed-num">03</div><h3>室內晾曬管理<br/>減少戶外污染接觸</h3><p>不直接在戶外或騎樓晾曬，減少寢具接觸道路揚塵、汽機車廢氣等外部污染的機會。</p></article></div></div></section>
-<section class="bed-section bed-sgs"><div class="container bed-sgs-layout"><div><span class="bed-eyebrow">SGS 洗後產品檢測</span><h2>我們檢測的，不只是洗劑。</h2><p>潔屋將完成水洗程序後的產品送交 SGS 進行四項檢測，重視完整洗滌流程後的產品檢測結果。</p><p class="bed-note">檢測內容與適用範圍以原始 SGS 報告為準；不代表每件寢具均逐件送驗，也不等同所有洗劑及處理劑分別取得認證。</p></div><details class="bed-report"><summary><span>查看 SGS 四項原始試驗報告</span><span class="bed-chevron">＋</span></summary><div class="bed-report-content"><div class="bed-sgs-originals"><p>以下為 2022 年 SGS 試驗報告首頁。螢光物質報告首頁顯示陰性；甲醛、重金屬與 pH 值的結果需以後續頁面確認。</p><details class="bed-original-report"><summary>查看 螢光物質 試驗報告首頁</summary><img alt="SGS 螢光物質 試驗報告首頁" loading="lazy" src="assets/images/sgs-fluorescent.png"/></details><details class="bed-original-report"><summary>查看 甲醛 試驗報告首頁</summary><img alt="SGS 甲醛 試驗報告首頁" loading="lazy" src="assets/images/sgs-formaldehyde.png"/></details><details class="bed-original-report"><summary>查看 重金屬 試驗報告首頁</summary><img alt="SGS 重金屬 試驗報告首頁" loading="lazy" src="assets/images/sgs-metals.png"/></details><details class="bed-original-report"><summary>查看 pH 值 試驗報告首頁</summary><img alt="SGS pH 值 試驗報告首頁" loading="lazy" src="assets/images/sgs-ph.png"/></details></div></div></details></div></section>
+<section class="bed-section bed-sgs" id="bed-sgs"><div class="container bed-sgs-layout"><div><span class="bed-eyebrow">SGS 洗後產品檢測</span><h2>我們檢測的，不只是洗劑。</h2><p>潔屋將完成水洗程序後的產品送交 SGS 進行四項檢測，重視完整洗滌流程後的產品檢測結果。</p><p class="bed-note">檢測內容與適用範圍以原始 SGS 報告為準；不代表每件寢具均逐件送驗，也不等同所有洗劑及處理劑分別取得認證。</p></div><details class="bed-report"><summary><span>查看 SGS 四項原始試驗報告</span><span class="bed-chevron">＋</span></summary><div class="bed-report-content"><div class="bed-sgs-originals">
+<p>以下為 2022 年 2 月 14 日的 SGS 試驗結果。送驗樣品為水洗服飾（藍色）。</p>
+<details class="bed-original-report">
+  <summary><span>可遷移性螢光物質</span><span class="bed-result">陰性</span><span aria-hidden="true" class="bed-result-chevron"></span></summary>
+  <p class="bed-report-meta">報告 TE/2022/20005 · 結果在第 1 頁</p>
+  <img alt="SGS 可遷移性螢光物質試驗結果，第 1 頁" height="1872" loading="lazy" src="assets/images/sgs-fluorescent.png" width="1323"/>
+</details>
+<details class="bed-original-report">
+  <summary><span>甲醛</span><span class="bed-result">未檢出</span><span aria-hidden="true" class="bed-result-chevron"></span></summary>
+  <p class="bed-report-meta">報告 TE/2022/20006 · 結果在第 2 頁</p>
+  <img alt="SGS 甲醛試驗結果，第 2 頁" height="1872" loading="lazy" src="assets/images/sgs-formaldehyde.png" width="1323"/>
+</details>
+<details class="bed-original-report">
+  <summary><span>重金屬溶出</span><span class="bed-result">8 項未檢出</span><span aria-hidden="true" class="bed-result-chevron"></span></summary>
+  <p class="bed-report-meta">報告 TE/2022/20007 · 結果在第 2 頁</p>
+  <img alt="SGS 重金屬溶出試驗結果，第 2 頁" height="1872" loading="lazy" src="assets/images/sgs-metals.png" width="1323"/>
+</details>
+<details class="bed-original-report">
+  <summary><span>pH 值</span><span class="bed-result">6.40</span><span aria-hidden="true" class="bed-result-chevron"></span></summary>
+  <p class="bed-report-meta">報告 TE/2022/20008 · 結果在第 2 頁</p>
+  <img alt="SGS pH 值試驗結果，第 2 頁" height="1872" loading="lazy" src="assets/images/sgs-ph.png" width="1323"/>
+</details>
+</div></div></details></div></section>
 <section class="bed-section"><div class="container bed-process"><div><span class="bed-eyebrow">送洗前的細心評估</span><h2>不同材質，安排合適洗護。</h2><p>棉被、羽絨被、毛毯、床包等大型寢具，依洗標、材質、結構、污漬與使用狀況評估適合的處理方式。</p></div><div class="bed-contact"><h3>想了解寢具適合怎麼洗？</h3><p>提供寢具種類、材質或照片，方便門市先行了解。</p><a class="btn primary" href="https://lin.ee/ZWFcFDN" rel="noopener" target="_blank">LINE 詢問</a><a class="btn ghost" href="prices.html">查看現有價目表</a></div></div></section>
 <section class="share-service-section"><div class="container share-service-inner"><button class="share-service-button" data-share-service="" type="button">↗ 分享此服務</button><span aria-live="polite" class="share-service-status" data-share-status="" role="status"></span></div></section></main><footer class="footer"><div class="container footer-inner"><div><strong>潔屋洗衣漢口店</strong><div class="muted">台中高品質洗衣專家｜精緻洗護 × 在地收送</div></div><div class="muted">把乾淨，變成日常。</div></div></footer><div class="mobile-cta"><a href="prices.html">查看價目</a><a data-line="" href="#">LINE 詢問</a></div><script src="assets/js/site.js"></script><script src="assets/js/share-service.js"></script></body></html>
