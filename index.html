@@ -4,14 +4,109 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>潔屋洗衣漢口店｜台中西屯專業洗護</title>
-  <meta name="description" content="潔屋洗衣漢口店位於台中西屯漢口商圈，提供精品衣物、羽絨外套、機能服飾、帽子、寢具與窗簾洗護。重視洗前檢查、風險告知與品質把關。" />
+  <meta name="description" content="潔屋洗衣漢口店位於台中西屯漢口商圈，提供帽子保養、羽絨外套、高級服飾、機能服飾、寢具與窗簾洗護，並提供在地收送服務。重視洗前檢查、風險告知與品質把關。" />
   <meta name="robots" content="index,follow" />
   <meta property="og:title" content="潔屋洗衣漢口店｜專業洗護・細節把關" />
   <meta property="og:description" content="台中西屯在地洗護服務。依衣物材質與實際狀況評估，重視每一次託付。" />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://jerwooa07-glitch.github.io/jerwoo-hankou-website/" />
   <link rel="stylesheet" href="assets/css/site.css" />
-  <link rel="stylesheet" href="assets/css/home-page.css" />
+  <style>/* 潔屋洗衣漢口店首頁｜暖白・米色・精品質感 */
+.home-page{background:#fbfaf7;color:#3e4038}
+.home-page header{background:rgba(255,255,255,.96);border-bottom-color:#ebe6dc}
+.home-page .brand{color:#49473f}
+.home-page .brand small{color:#8c877b}
+.home-page .nav-menu a{color:#56564e}
+.home-page .nav-menu a:hover{color:#9b8464}
+.home-page .nav-toggle{border-color:#e7e0d4;color:#5f5a4f}
+.home-hero{position:relative;overflow:hidden;isolation:isolate;padding:clamp(84px,12vw,150px) 0 clamp(78px,10vw,122px);background:linear-gradient(125deg,#f6f1e8 0%,#f9f7f1 54%,#ece9df 100%);text-align:center}
+.home-hero:before{content:"";position:absolute;z-index:-1;width:min(54vw,670px);height:min(54vw,670px);right:-12%;top:-52%;border:1px solid rgba(154,136,106,.18);border-radius:50%;box-shadow:0 0 0 44px rgba(255,255,255,.18),0 0 0 92px rgba(255,255,255,.12)}
+.home-hero:after{content:"";position:absolute;z-index:-1;width:min(30vw,380px);height:min(30vw,380px);left:-12%;bottom:-56%;border:1px solid rgba(154,136,106,.15);border-radius:50%}
+.home-hero-inner{position:relative;z-index:1;max-width:860px}
+.home-kicker,.home-eyebrow{margin:0;color:#9a8668;font-size:11px;font-weight:700;letter-spacing:.2em}
+.home-hero h1{margin:26px 0 17px;color:#403f38;font-family:"Noto Serif TC","Songti TC",serif;font-size:clamp(42px,6.3vw,72px);font-weight:600;line-height:1.34;letter-spacing:.045em}
+.home-hero h1 em{color:#927b5d;font-style:normal}
+.home-subtitle{margin:0;color:#6f6a5e;font-size:clamp(16px,2vw,20px);letter-spacing:.2em}
+.home-actions,.store-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:34px}
+.home-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 25px;border:1px solid #cfc4b2;border-radius:2px;font-size:14px;font-weight:700;letter-spacing:.04em;transition:background .2s,color .2s,border-color .2s}
+.home-btn-primary{background:#6c705e;border-color:#6c705e;color:#fff}
+.home-btn-primary:hover{background:#555b49;border-color:#555b49;color:#fff}
+.home-btn-outline{background:rgba(255,255,255,.45);color:#635e52}
+.home-btn-outline:hover{background:#fff;color:#49463e;border-color:#b9aa93}
+.home-location{display:block;margin-top:30px;color:#8a857a;font-size:12px;letter-spacing:.1em}
+.home-principles{background:#fff;padding:23px 0;border-bottom:1px solid #f0ece4}
+.principle-strip{display:grid;grid-template-columns:repeat(3,1fr);max-width:850px}
+.principle-strip>div{display:flex;justify-content:center;align-items:center;gap:12px;padding:8px 15px;border-right:1px solid #eae5dc}
+.principle-strip>div:last-child{border-right:0}
+.principle-strip span{color:#aa9879;font-family:Georgia,serif;font-size:12px;letter-spacing:.08em}
+.principle-strip strong{color:#55564c;font-size:14px;letter-spacing:.08em}
+.home-services{padding:clamp(68px,9vw,105px) 0;background:#fbfaf7}
+.home-section-heading{text-align:center;margin:0 auto 38px}
+.home-section-heading h2,.store-intro h2{margin:12px 0;color:#45443b;font-family:"Noto Serif TC","Songti TC",serif;font-size:clamp(29px,4vw,42px);font-weight:600;letter-spacing:.06em}
+.home-section-heading p{margin:0;color:#898477;font-size:14px;letter-spacing:.04em}
+.home-service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.home-service-card{min-width:0;padding:29px 21px 25px;background:#fff;border:1px solid #ebe6dc;transition:transform .2s,border-color .2s,box-shadow .2s}
+.home-service-card:hover{transform:translateY(-3px);border-color:#d7cbb8;box-shadow:0 14px 35px rgba(87,75,54,.06)}
+.service-symbol{display:flex;align-items:center;justify-content:center;width:52px;height:52px;margin:0 auto 20px;border:1px solid #e9e1d4;border-radius:50%;background:#faf8f3}
+.service-symbol img{width:25px;height:25px;filter:sepia(.55) saturate(.65) hue-rotate(350deg)}
+.home-service-card h3{margin:0 0 9px;color:#4a4a40;text-align:center;font-family:"Noto Serif TC","Songti TC",serif;font-size:18px;font-weight:600;letter-spacing:.03em}
+.home-service-card p{min-height:44px;margin:0;color:#8a8579;text-align:center;font-size:13px;line-height:1.8}
+.service-links{display:flex;justify-content:center;gap:13px;flex-wrap:wrap;margin-top:18px;padding-top:15px;border-top:1px solid #f0ece5}
+.service-links a{color:#8b7658;font-size:12px;font-weight:700;text-decoration:none}
+.service-links a:hover{color:#514b3e;text-decoration:underline;text-underline-offset:4px}
+.pickup-inline{margin-top:27px;color:#8a8579;text-align:center;font-size:13px}
+.pickup-inline a{color:#84704f;font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.home-store{padding:clamp(64px,8vw,92px) 0;background:#f0ede5}
+.store-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:8%;align-items:center}
+.store-intro h2{line-height:1.55}
+.store-intro p{max-width:390px;color:#777366;line-height:1.9;font-size:14px}
+.store-details{padding:30px 34px;background:rgba(255,255,255,.72);border:1px solid #e5dfd3}
+.store-detail{display:grid;grid-template-columns:94px 1fr;gap:16px;padding:13px 0;border-bottom:1px solid #eee9df}
+.store-detail:first-child{padding-top:0}
+.store-detail span{color:#a08b6c;font-size:13px;letter-spacing:.08em}
+.store-detail strong{color:#555348;font-size:14px;font-weight:600;line-height:1.8}
+.store-detail a{color:inherit}
+.store-actions{justify-content:flex-start;margin-top:22px}
+.home-footer{padding:30px 0;background:#45483e;color:#f6f2e9}
+.home-footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.home-footer-inner strong{display:block;font-size:16px;letter-spacing:.08em}
+.home-footer-inner span,.home-footer-inner small{color:#d0caba;font-size:12px;letter-spacing:.04em}
+.home-footer-inner span{display:block;margin-top:5px}
+.home-page .mobile-cta{box-shadow:0 10px 28px rgba(51,48,39,.18)}
+.home-page .mobile-cta a:first-child{background:#f7f3eb;color:#5c574b}
+.home-page .mobile-cta a:last-child{background:#6c705e;color:#fff}
+@media(max-width:900px){.home-service-grid{grid-template-columns:repeat(2,1fr)}.store-layout{grid-template-columns:1fr;gap:24px}.store-intro p{max-width:650px}}
+@media(max-width:600px){.home-hero{padding:78px 0 70px}.home-hero h1{font-size:42px;margin-top:23px}.home-principles{padding:15px 0}.principle-strip>div{gap:7px;padding:8px 4px}.principle-strip strong{font-size:12px}.principle-strip span{font-size:10px}.home-services{padding:58px 0}.home-section-heading{margin-bottom:26px}.home-service-grid{gap:10px}.home-service-card{padding:22px 12px 18px}.service-symbol{width:44px;height:44px;margin-bottom:14px}.home-service-card h3{font-size:16px}.home-service-card p{font-size:12px;min-height:42px}.service-links{gap:9px;margin-top:13px;padding-top:12px}.service-links a{font-size:11px}.home-store{padding:58px 0}.store-details{padding:22px 18px}.store-detail{grid-template-columns:75px 1fr;gap:10px}.store-actions{gap:9px}.store-actions .home-btn{padding:0 15px;font-size:12px;min-height:44px}.home-footer-inner{align-items:flex-start;flex-direction:column;gap:12px}}
+@media(prefers-reduced-motion:reduce){.home-service-card,.home-btn{transition:none}}
+
+
+/* Repair: self-contained homepage layout and service links */
+.home-page .topbar{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px;padding-top:10px;padding-bottom:10px}
+.home-page .brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+.home-page .brand img{display:block;width:58px;height:auto;max-height:54px;object-fit:contain}
+.home-page .brand div{display:grid;gap:3px}
+.home-page .brand strong{display:block;font-size:18px;line-height:1.25}
+.home-page .brand small{display:block;font-size:12px;line-height:1.4}
+.home-page .nav-menu{display:flex;align-items:center;gap:clamp(13px,1.8vw,25px)}
+.home-page .nav-menu a{font-size:14px;font-weight:650;text-decoration:none;white-space:nowrap}
+.home-page .nav-toggle{display:none;background:transparent;border:1px solid #e7e0d4;border-radius:4px;padding:7px 11px;font-size:21px;line-height:1.1;cursor:pointer}
+.home-service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.home-service-card{display:flex;flex-direction:column;min-height:205px;min-width:0;padding:25px 25px 22px;background:#fff;border:1px solid #ebe6dc;color:inherit;text-decoration:none;transition:transform .2s,border-color .2s,box-shadow .2s}
+.home-service-card:hover{transform:translateY(-3px);border-color:#d7cbb8;box-shadow:0 14px 35px rgba(87,75,54,.06)}
+.home-service-number{display:block;margin-bottom:18px;color:#aa9879;font-family:Georgia,serif;font-size:12px;letter-spacing:.18em}
+.home-service-card h3{margin:0 0 9px;color:#4a4a40;font-family:"Noto Serif TC","Songti TC",serif;font-size:19px;font-weight:600;letter-spacing:.03em}
+.home-service-card p{margin:0;color:#8a8579;font-size:13px;line-height:1.85}
+.home-service-link{display:inline-flex;align-items:center;gap:7px;margin-top:auto;padding-top:18px;color:#8b7658;font-size:12px;font-weight:700;letter-spacing:.04em}
+.home-pickup-callout{display:flex;justify-content:space-between;align-items:center;gap:22px;margin-top:22px;padding:22px 26px;background:#f1eee6;border:1px solid #e5dfd3}
+.home-pickup-callout strong{display:block;color:#514d42;font-size:16px;letter-spacing:.06em}
+.home-pickup-callout p{margin:5px 0 0;color:#817b6e;font-size:13px}
+.home-pickup-callout a{flex-shrink:0;color:#81704f;font-weight:700;font-size:13px;text-decoration:underline;text-underline-offset:4px}
+.home-store{scroll-margin-top:82px}
+.home-services{scroll-margin-top:82px}
+@media(max-width:900px){.home-service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.home-page .nav-menu{gap:12px}.home-page .nav-menu a{font-size:13px}}
+@media(max-width:820px){.home-page .topbar{position:relative;min-height:70px}.home-page .nav-toggle{display:block}.home-page .nav-menu{display:none;position:absolute;left:0;right:0;top:100%;z-index:20;padding:12px 20px;background:#fff;border-top:1px solid #ebe6dc;border-bottom:1px solid #ebe6dc;box-shadow:0 12px 24px rgba(65,58,45,.08);flex-direction:column;align-items:stretch;gap:0}.home-page .nav-menu.open{display:flex}.home-page .nav-menu a{padding:12px 4px;border-bottom:1px solid #f0ece5;font-size:14px}.home-page .nav-menu a:last-child{border-bottom:0}}
+@media(max-width:600px){.home-service-grid{grid-template-columns:1fr;gap:12px}.home-service-card{min-height:0;padding:21px 20px}.home-service-number{margin-bottom:11px}.home-service-card h3{font-size:17px}.home-service-link{padding-top:13px}.home-pickup-callout{align-items:flex-start;flex-direction:column;padding:20px}.home-pickup-callout a{margin-top:2px}}
+</style>
 </head>
 <body class="home-page">
 <header>
@@ -64,32 +159,47 @@
         <p>依材質、洗標與實際衣況，評估合適的處理方式。</p>
       </div>
       <div class="home-service-grid">
-        <article class="home-service-card">
-          <div class="service-symbol"><img src="assets/icons/premium.svg" alt="" loading="lazy" /></div>
-          <h3>精緻衣物洗護</h3>
-          <p>精品、大衣及特殊材質衣物。</p>
-          <div class="service-links"><a href="premium-care.html">高級服飾</a><a href="down-jacket.html">羽絨外套</a></div>
-        </article>
-        <article class="home-service-card">
-          <div class="service-symbol"><img src="assets/icons/ski.svg" alt="" loading="lazy" /></div>
-          <h3>機能服飾洗護</h3>
-          <p>雪衣、雪褲與機能性服飾。</p>
-          <div class="service-links"><a href="ski-goretex.html">了解機能服飾洗護</a></div>
-        </article>
-        <article class="home-service-card">
-          <div class="service-symbol"><img src="assets/icons/hat.svg" alt="" loading="lazy" /></div>
+        <a class="home-service-card" href="hat-care.html">
+          <span class="home-service-number">SERVICE 01</span>
           <h3>帽子清潔與保養</h3>
-          <p>清潔、帽型整理與細節照顧。</p>
-          <div class="service-links"><a href="hat-care.html">了解帽子服務</a></div>
-        </article>
-        <article class="home-service-card">
-          <div class="service-symbol"><img src="assets/icons/bedding.svg" alt="" loading="lazy" /></div>
-          <h3>居家織品清洗</h3>
-          <p>寢具、棉被、毛毯與窗簾。</p>
-          <div class="service-links"><a href="bedding.html">寢具清洗</a><a href="curtain.html">窗簾清洗</a></div>
-        </article>
+          <p>清潔、汗漬與異味處理，並留意帽型整理與細節照顧。</p>
+          <span class="home-service-link">了解帽子服務 ↗</span>
+        </a>
+        <a class="home-service-card" href="down-jacket.html">
+          <span class="home-service-number">SERVICE 02</span>
+          <h3>羽絨外套洗護</h3>
+          <p>依洗標、填充結構與衣物狀況，評估合適洗程與乾燥整理。</p>
+          <span class="home-service-link">了解羽絨洗護 ↗</span>
+        </a>
+        <a class="home-service-card" href="premium-care.html">
+          <span class="home-service-number">SERVICE 03</span>
+          <h3>高級服飾洗護</h3>
+          <p>精品、大衣、羊毛、真絲及特殊材質衣物，逐件評估處理。</p>
+          <span class="home-service-link">了解高級服飾 ↗</span>
+        </a>
+        <a class="home-service-card" href="ski-goretex.html">
+          <span class="home-service-number">SERVICE 04</span>
+          <h3>雪衣雪褲・機能服飾</h3>
+          <p>針對機能衣物與滑雪裝備，依洗標與材質安排適合洗護方式。</p>
+          <span class="home-service-link">了解機能服飾洗護 ↗</span>
+        </a>
+        <a class="home-service-card" href="bedding.html">
+          <span class="home-service-number">SERVICE 05</span>
+          <h3>寢具清洗</h3>
+          <p>棉被、羽絨被、毛毯與床組等居家寢具清潔保養。</p>
+          <span class="home-service-link">了解寢具清洗 ↗</span>
+        </a>
+        <a class="home-service-card" href="curtain.html">
+          <span class="home-service-number">SERVICE 06</span>
+          <h3>窗簾清洗</h3>
+          <p>依窗簾尺寸、材質與結構評估，確認處理方式及收費後安排。</p>
+          <span class="home-service-link">了解窗簾清洗 ↗</span>
+        </a>
       </div>
-      <div class="pickup-inline">另提供在地到府收送服務，<a href="pickup.html">查看收送方式 <span aria-hidden="true">↗</span></a></div>
+      <div class="home-pickup-callout">
+        <div><strong>到府收送服務</strong><p>提供在地收送安排，服務區域與時間請先與門市確認。</p></div>
+        <a href="pickup.html">查看收送方式 ↗</a>
+      </div>
     </div>
   </section>
 
