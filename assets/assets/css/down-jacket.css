@@ -1,0 +1,63 @@
+/* 潔屋洗衣漢口店羽絨外套頁｜與首頁一致的暖白米色視覺 */
+.down-page{background:#fbfaf7;color:#4b493f}
+.down-page header{background:rgba(255,255,255,.96);border-bottom-color:#ebe6dc}
+.down-page .brand{color:#49473f}.down-page .brand small{color:#8c877b}
+.down-page .nav-menu a{color:#56564e}.down-page .nav-menu a:hover{color:#9b8464}
+.down-page .nav-toggle{border-color:#e7e0d4;color:#5f5a4f}
+.down-breadcrumb{display:flex;gap:10px;align-items:center;padding-top:18px;color:#a19786;font-size:12px}
+.down-breadcrumb a{color:#897657;text-decoration:none}.down-breadcrumb a:hover{text-decoration:underline}
+.down-hero{position:relative;overflow:hidden;padding:clamp(54px,8vw,100px) 0;background:linear-gradient(125deg,#f5f0e7 0%,#fbf9f4 60%,#eee9df 100%)}
+.down-hero:after{content:"";position:absolute;width:500px;height:500px;right:-160px;top:-220px;border:1px solid rgba(154,136,106,.17);border-radius:50%;box-shadow:0 0 0 40px rgba(255,255,255,.15),0 0 0 82px rgba(255,255,255,.1);pointer-events:none}
+.down-hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,6vw,80px);align-items:center}
+.down-kicker,.down-eyebrow{margin:0;color:#9a8668;font-size:11px;font-weight:700;letter-spacing:.2em}
+.down-hero h1{margin:22px 0 17px;color:#423f37;font-family:"Noto Serif TC","Songti TC",serif;font-size:clamp(42px,6vw,68px);font-weight:600;line-height:1.3;letter-spacing:.045em}
+.down-hero h1 em{color:#927b5d;font-style:normal}
+.down-lead{max-width:560px;margin:0;color:#777165;font-size:16px;line-height:2}
+.down-actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:30px}
+.down-btn{display:inline-flex;min-height:46px;align-items:center;justify-content:center;padding:0 22px;border:1px solid #cfc4b2;border-radius:2px;font-size:13px;font-weight:700;letter-spacing:.04em;text-decoration:none;transition:background .2s,color .2s,border-color .2s}
+.down-btn-primary{background:#6c705e;border-color:#6c705e;color:#fff}.down-btn-primary:hover{background:#555b49;border-color:#555b49;color:#fff}
+.down-btn-outline{background:rgba(255,255,255,.5);color:#635e52}.down-btn-outline:hover{background:#fff;color:#49463e;border-color:#b9aa93}
+.down-hero-panel{position:relative;max-width:430px;min-height:340px;margin-left:auto;padding:36px;background:rgba(255,255,255,.72);border:1px solid rgba(218,208,190,.9);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 22px 55px rgba(91,77,53,.055)}
+.down-panel-overline{color:#a18e70;font-family:Georgia,serif;font-size:11px;letter-spacing:.23em}
+.down-hero-panel img{width:80px;height:80px;margin:28px 0 18px;filter:sepia(.6) saturate(.65) hue-rotate(350deg)}
+.down-panel-title{margin:0 0 20px;color:#514c40;font-family:"Noto Serif TC","Songti TC",serif;font-size:25px;letter-spacing:.08em}
+.down-panel-points{display:flex;justify-content:center;gap:9px;flex-wrap:wrap}
+.down-panel-points span{padding:7px 10px;border:1px solid #e8e0d3;color:#82745d;font-size:11px;letter-spacing:.04em}
+.down-section{padding:clamp(58px,8vw,88px) 0;background:#fff}
+.down-intro-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:8%;align-items:end}
+.down-intro h2,.down-section-heading h2,.down-contact h2{margin:13px 0 0;color:#45443b;font-family:"Noto Serif TC","Songti TC",serif;font-size:clamp(29px,4vw,42px);font-weight:600;line-height:1.5;letter-spacing:.055em}
+.down-intro-layout>p{max-width:620px;margin:0;color:#777366;font-size:15px;line-height:2.05}
+.down-feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:38px}
+.down-feature{padding:25px 23px;background:#fbfaf7;border:1px solid #eee9df}
+.down-feature>span{color:#a18e70;font-family:Georgia,serif;font-size:13px;letter-spacing:.1em}
+.down-feature h3{margin:16px 0 8px;color:#504d42;font-family:"Noto Serif TC","Songti TC",serif;font-size:19px;font-weight:600}
+.down-feature p{margin:0;color:#827d71;font-size:13px;line-height:1.9}
+.down-sgs-section,.down-price-section{background:#f3f0e9}
+.down-section-heading{text-align:center;margin:0 auto 32px}
+.down-section-heading p{margin:12px 0 0;color:#817b6f;font-size:14px;line-height:1.8}
+.down-sgs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.down-sgs-item{min-height:116px;padding:20px 16px;background:#fff;border:1px solid #e9e3d8;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px}
+.down-sgs-item b{color:#a18e70;font-family:Georgia,serif;font-size:13px;font-weight:400;letter-spacing:.1em}
+.down-sgs-item strong{color:#565348;font-size:14px;line-height:1.65;font-weight:600}
+.down-proof-link{margin:20px 0 0;text-align:center;font-size:12px}.down-proof-link a{color:#8b7658;text-decoration:underline;text-underline-offset:4px}
+.down-process{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;padding:0;margin:34px 0 0;list-style:none;counter-reset:none}
+.down-process li{min-height:132px;padding:20px 13px;background:#fbfaf7;border:1px solid #eee9df;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:13px;text-align:center}
+.down-process li span{display:grid;place-items:center;width:34px;height:34px;border:1px solid #d9cdbb;border-radius:50%;color:#967e5d;font-family:Georgia,serif;font-size:12px}
+.down-process li strong{color:#575348;font-size:14px;font-weight:600}
+.down-risk-note{display:grid;grid-template-columns:100px 1fr;gap:18px;margin-top:24px;padding:20px 23px;background:#f5f1e9;border-left:3px solid #b09a77}
+.down-risk-note strong{color:#8a7454;font-size:13px;letter-spacing:.08em}.down-risk-note p{margin:0;color:#777165;font-size:13px;line-height:1.9}
+.down-price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;max-width:900px;margin:30px auto 0}
+.down-price-card{padding:25px 24px;background:#fff;border:1px solid #e6dfd3}
+.down-price-card.featured{border-color:#b8a486;box-shadow:0 10px 28px rgba(91,77,53,.07)}
+.down-price-card h3{margin:0 0 20px;color:#4f4b40;text-align:center;font-family:"Noto Serif TC","Songti TC",serif;font-size:19px;font-weight:600}
+.down-price-card p{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0;padding:10px 0;border-top:1px solid #f0ece5;color:#858073;font-size:13px}
+.down-price-card p strong{color:#6e705d;font-size:22px;font-family:Georgia,serif;font-weight:500}
+.down-price-actions{justify-content:center}
+.down-contact{padding:65px 0;background:#e9e5da;text-align:center}
+.down-contact-inner{max-width:720px}.down-contact h2{margin-top:12px}.down-contact p{margin:13px auto 22px;color:#777165;font-size:14px;line-height:1.9}
+.down-page .share-service-section{background:#fbfaf7;padding:26px 0 42px}
+.down-page .share-service-button{border-color:#d7cbb8;background:#f5f1e9;color:#746247;border-radius:2px}
+.down-page .footer{background:#45483e!important}.down-page .mobile-cta a:first-child{background:#f7f3eb;color:#5c574b}.down-page .mobile-cta a:last-child{background:#6c705e;color:#fff}
+@media(max-width:850px){.down-hero-grid{grid-template-columns:1fr}.down-hero-panel{max-width:none;min-height:260px;margin:4px 0 0}.down-intro-layout{grid-template-columns:1fr;gap:18px}.down-process{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.down-breadcrumb{padding-top:13px}.down-hero{padding:55px 0}.down-hero h1{font-size:43px}.down-hero-panel{min-height:235px;padding:25px}.down-hero-panel img{width:62px;height:62px;margin:18px 0 13px}.down-section{padding:55px 0}.down-feature-grid,.down-sgs-grid,.down-price-grid{grid-template-columns:1fr}.down-feature{padding:20px}.down-sgs-item{min-height:84px}.down-process{grid-template-columns:1fr 1fr;gap:9px}.down-process li{min-height:100px}.down-risk-note{grid-template-columns:1fr;gap:8px;padding:17px}.down-price-card{padding:22px}.down-price-actions{justify-content:stretch}.down-price-actions .down-btn{width:100%}.down-contact{padding:52px 0}}
+@media(prefers-reduced-motion:reduce){.down-btn{transition:none}}
